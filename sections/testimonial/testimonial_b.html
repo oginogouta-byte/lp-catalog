@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  .testimonial-section {
+    padding: 80px 20px;
+    background: #fff;
+    font-family: -apple-system, sans-serif;
+  }
+  .testimonial-section h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .case-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px; }
+  .case-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 32px;
+  }
+  .case-card .company {
+    font-size: 13px;
+    color: #3b82f6;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .case-card h3 { font-size: 18px; font-weight: 700; color: #111; margin-bottom: 20px; }
+  .case-row { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  .case-row div { }
+  .case-row .label { font-size: 12px; color: #888; font-weight: 600; text-transform: uppercase; margin-bottom: 6px; }
+  .case-row p { font-size: 14px; color: #555; line-height: 1.6; }
+  @media (min-width: 768px) {
+    .testimonial-section { padding: 140px 40px; }
+    .testimonial-section h2 { font-size: 48px; margin-bottom: 72px; }
+    .case-list { gap: 48px; }
+    .case-card { padding: 48px; }
+    .case-card .company { font-size: 22px; margin-bottom: 18px; }
+    .case-card h3 { font-size: 30px; margin-bottom: 32px; }
+    .case-row { gap: 24px; }
+    .case-row .label { font-size: 20px; margin-bottom: 10px; }
+    .case-row p { font-size: 24px; line-height: 1.8; }
+  }
+</style>
+</head>
+<body>
+  <section class="testimonial-section">
+    <h2>導入事例</h2>
+    <div class="case-list">
+      <div class="case-card">
+        <div class="company">株式会社サンプルテック</div>
+        <h3>業務効率化により月間120時間の工数削減を実現</h3>
+        <div class="case-row">
+          <div><div class="label">課題</div><p>手作業によるデータ入力が膨大で、ヒューマンエラーが頻発していた。</p></div>
+          <div><div class="label">施策</div><p>データ入力の自動化とバリデーション機能を導入。ワークフローを再設計。</p></div>
+          <div><div class="label">成果</div><p>月間120時間の工数削減。エラー率を95%低減し、チームの満足度も向上。</p></div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="company">合同会社グローバルコマース</div>
+        <h3>データ活用で売上前年比150%を達成</h3>
+        <div class="case-row">
+          <div><div class="label">課題</div><p>各部署のデータが分断され、経営判断に必要な情報が集約できていなかった。</p></div>
+          <div><div class="label">施策</div><p>全社データを統合ダッシュボードで可視化。KPI管理を一元化。</p></div>
+          <div><div class="label">成果</div><p>データに基づく意思決定が加速し、売上は前年比150%に成長。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

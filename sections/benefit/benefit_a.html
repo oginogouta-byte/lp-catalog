@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .benefit-section {
+    padding: 64px 20px;
+    background: #f5f5f5;
+    font-family: -apple-system, 'Hiragino Sans', sans-serif;
+  }
+
+  .benefit-inner {
+    max-width: 800px;
+    margin-inline: auto;
+  }
+
+  .benefit-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 0.08em;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .benefit-heading {
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 800;
+    color: #111;
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 56px;
+  }
+
+  .benefit-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .benefit-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .benefit-visual {
+    background: #eee;
+    border-radius: 12px;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .benefit-visual-inner {
+    width: 100%;
+    height: 100%;
+    background:
+      linear-gradient(135deg, #e8e8e8 25%, transparent 25%),
+      linear-gradient(225deg, #e8e8e8 25%, transparent 25%),
+      linear-gradient(315deg, #e8e8e8 25%, transparent 25%),
+      linear-gradient(45deg, #e8e8e8 25%, transparent 25%);
+    background-size: 24px 24px;
+    background-position: 0 0, 0 12px, 12px -12px, 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .benefit-visual-label {
+    background: rgba(255,255,255,0.9);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #999;
+    font-weight: 500;
+  }
+
+  .benefit-content {}
+
+  .benefit-num {
+    font-size: 12px;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+  }
+
+  .benefit-row-title {
+    font-size: clamp(18px, 3vw, 22px);
+    font-weight: 800;
+    color: #111;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  .benefit-row-desc {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.9;
+  }
+
+  @media (min-width: 768px) {
+    .benefit-section { padding: 120px 40px; }
+    .benefit-rows { gap: 72px; }
+    .benefit-row { gap: 32px; }
+    .benefit-label { font-size: 22px; }
+    .benefit-heading { font-size: clamp(32px, 4vw, 44px); margin-bottom: 80px; }
+    .benefit-num { font-size: 20px; }
+    .benefit-row-title { font-size: clamp(28px, 3vw, 36px); }
+    .benefit-row-desc { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+  <section class="benefit-section">
+    <div class="benefit-inner">
+      <p class="benefit-label">BENEFIT</p>
+      <h2 class="benefit-heading">導入で変わる3つのポイント</h2>
+      <div class="benefit-rows">
+
+        <div class="benefit-row">
+          <div class="benefit-visual">
+            <div class="benefit-visual-inner">
+              <span class="benefit-visual-label">IMAGE / ILLUSTRATION</span>
+            </div>
+          </div>
+          <div class="benefit-content">
+            <p class="benefit-num">BENEFIT 01</p>
+            <h3 class="benefit-row-title">業務時間を50%削減</h3>
+            <p class="benefit-row-desc">手作業で行っていたルーティン業務を自動化。チームメンバーがより創造的な業務に集中できる環境を実現します。</p>
+          </div>
+        </div>
+
+        <div class="benefit-row">
+          <div class="benefit-visual">
+            <div class="benefit-visual-inner">
+              <span class="benefit-visual-label">IMAGE / ILLUSTRATION</span>
+            </div>
+          </div>
+          <div class="benefit-content">
+            <p class="benefit-num">BENEFIT 02</p>
+            <h3 class="benefit-row-title">リアルタイムでデータを可視化</h3>
+            <p class="benefit-row-desc">散在していたデータを一元管理。ダッシュボードでリアルタイムに状況を把握し、迅速な意思決定を支援します。</p>
+          </div>
+        </div>
+
+        <div class="benefit-row">
+          <div class="benefit-visual">
+            <div class="benefit-visual-inner">
+              <span class="benefit-visual-label">IMAGE / ILLUSTRATION</span>
+            </div>
+          </div>
+          <div class="benefit-content">
+            <p class="benefit-num">BENEFIT 03</p>
+            <h3 class="benefit-row-title">チーム全体の生産性向上</h3>
+            <p class="benefit-row-desc">ナレッジの共有と業務の標準化により、属人化を解消。組織全体のパフォーマンスを底上げします。</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--
+  Section Parts Catalog: Intro_F（トレースからカタログ登録）
+  トレース元: https://kikasete-journey.jp/
+  対象: #sec-lead セクション（きかせてジャーニーのブロック）
+  セクション種別: intro（サービス紹介・コンセプト）
+  構造:
+    - サブタイトル（em）: 小さめ、アクセント色
+    - タイトル: ロゴSVG画像 → テキスト化（大きめ）
+    - 本文: 2段落、中央揃え、両端揃え
+    - 画像: 動画（YouTube） → 画像プレースホルダーに置換
+    - 背景: 白、text-align: center
+    - PC/SP 同一レイアウト。PCではフォントサイズのみ拡大。
+-->
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --lp-max-width: 800px;
+  }
+
+  .intro-section {
+    background: #fff;
+    font-family: -apple-system, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    color: #454545;
+    text-align: center;
+    padding: 10px 0 90px;
+  }
+
+  .intro-shell {
+    width: 100%;
+    max-width: var(--lp-max-width);
+    margin-inline: auto;
+    padding-inline: 16px;
+  }
+
+  /* ── サブタイトル ── */
+  .intro-sub {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    line-height: 1.65;
+    color: #555;
+    margin-bottom: 13px;
+  }
+
+  /* ── タイトル ── */
+  .intro-title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #333;
+    margin-bottom: 30px;
+  }
+
+  /* ── 本文段落 ── */
+  .intro-txt {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.95;
+    letter-spacing: 0.02em;
+    color: #454545;
+    text-align: justify;
+    padding: 0 24px;
+    margin-bottom: 10px;
+  }
+
+  /* ── 画像プレースホルダー（動画の代替） ── */
+  .intro-visual {
+    margin: 45px 20px 0;
+    background: #d5d5d5;
+    border-radius: 8px;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #999;
+    letter-spacing: 0.06em;
+    overflow: hidden;
+  }
+
+  /* ================================
+     PC（min-width: 768px）
+     ================================ */
+  @media (min-width: 768px) {
+    .intro-section {
+      padding: 40px 0 140px;
+    }
+
+    .intro-shell {
+      padding-inline: 24px;
+    }
+
+    .intro-sub {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .intro-title {
+      font-size: 50px;
+      margin-bottom: 40px;
+    }
+
+    .intro-txt {
+      font-size: 26px;
+      line-height: 2.2;
+      padding: 0;
+    }
+
+    .intro-visual {
+      margin: 64px 0 0;
+      border-radius: 12px;
+    }
+  }
+</style>
+</head>
+<body>
+  <section class="intro-section">
+    <div class="intro-shell">
+
+      <p class="intro-sub">子どもの権利を学ぶワークショップ</p>
+      <h2 class="intro-title">きかせてジャーニー</h2>
+
+      <p class="intro-txt">きかせてジャーニーは、学校や地域の中で、子どもたちがお互いの声をきき合いながら「子どもの権利」を学ぶワークショッププログラムです。</p>
+
+      <p class="intro-txt">ファシリテーターと一緒に、旅をコンセプトにした３つのワークを通して楽しみながら「子どもの権利」への理解を深めてきます。子ども時代のわくわくする旅へ、さぁ出発！</p>
+
+      <!-- 動画 → 画像プレースホルダー -->
+      <div class="intro-visual">IMAGE / MOVIE</div>
+
+    </div>
+  </section>
+</body>
+</html>

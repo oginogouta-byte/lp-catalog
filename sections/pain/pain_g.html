@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root {
+    /* テイスト適用時はここを変更 */
+    --pain-bg: #666;
+    --pain-bubble-bg: #222;
+    --pain-bubble-text: #fff;
+    --pain-heading-color: #fff;
+    --pain-heading-accent: #fff;
+    --pain-accent-underline: #ccc;
+    --pain-pointer-color: #fff;
+    --pain-wave-fill: #fff;
+    --pain-transition-bg: #fff;
+    --pain-transition-color: #333;
+    /* 人物画像フィルター — テイスト適用時はここを変更 */
+    --person-filter: grayscale(100%) brightness(0.9);
+    --person-blend: normal;
+    --person-overlay-color: transparent;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .pain-section {
+    position: relative;
+    background: var(--pain-bg);
+    font-family: -apple-system, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    color: #fff;
+    overflow: hidden;
+  }
+
+  /* ── 上部ポインター（逆三角） ── */
+  .pain-pointer {
+    display: flex;
+    justify-content: center;
+    padding-top: 0;
+    background: var(--pain-wave-fill);
+  }
+
+  .pain-pointer-arrow {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 18px solid var(--pain-pointer-color);
+  }
+
+  /* ── 見出しエリア ── */
+  .pain-header {
+    text-align: center;
+    padding: 36px 20px 8px;
+    position: relative;
+    z-index: 3;
+  }
+
+  .pain-header-title {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+    color: var(--pain-heading-color);
+  }
+
+  .pain-header-title .accent {
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--pain-heading-accent);
+  }
+
+  /* 手書き風波線デコ（SVG） */
+  .pain-header-wave {
+    display: block;
+    margin: 10px auto 0;
+    width: 140px;
+    height: auto;
+    opacity: 0.7;
+  }
+
+  /* ── メインコンテンツ ── */
+  .pain-content {
+    position: relative;
+    max-width: 800px;
+    margin-inline: auto;
+    min-height: auto;
+    padding: 0 16px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* ── 人物画像プレースホルダー ── */
+  .pain-person {
+    position: relative;
+    z-index: 1;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    width: 200px;
+    height: 260px;
+    order: 3;
+    margin: 4px 0 0;
+    align-self: flex-end;
+  }
+
+  .pain-person-inner {
+    width: 100%;
+    height: 100%;
+    background: #777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #aaa;
+    letter-spacing: 0.08em;
+    position: relative;
+    overflow: hidden;
+    filter: var(--person-filter);
+    mix-blend-mode: var(--person-blend);
+  }
+
+  /* 画像にカラーオーバーレイをかけるための疑似要素 */
+  .pain-person-inner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--person-overlay-color);
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
+
+  /* ── モクモク雲型吹き出し ── */
+  .pain-cloud {
+    position: relative;
+    z-index: 2;
+    background: var(--pain-bubble-bg);
+    color: var(--pain-bubble-text);
+    padding: 20px 24px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    line-height: 1.7;
+    /* モクモクシルエット: 多重box-shadowで丸を散らす */
+    border-radius: 50%;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+  }
+
+  .pain-cloud .highlight {
+    font-weight: 800;
+    font-size: 1.2em;
+    text-decoration: underline;
+    text-decoration-color: var(--pain-accent-underline);
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+
+  /* 各吹き出しのモクモク形状 — box-shadow多重 */
+  .pain-cloud--1 {
+    width: 260px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 48% 52% 46% 54% / 50% 45% 55% 50%;
+    box-shadow:
+      -30px -20px 0 -8px var(--pain-bubble-bg),
+      25px -15px 0 -5px var(--pain-bubble-bg),
+      -20px 18px 0 -6px var(--pain-bubble-bg),
+      30px 20px 0 -10px var(--pain-bubble-bg);
+  }
+
+  .pain-cloud--2 {
+    width: 280px;
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 52% 48% 54% 46% / 45% 55% 50% 50%;
+    box-shadow:
+      -25px -18px 0 -6px var(--pain-bubble-bg),
+      30px -12px 0 -8px var(--pain-bubble-bg),
+      -28px 15px 0 -5px var(--pain-bubble-bg),
+      22px 22px 0 -7px var(--pain-bubble-bg);
+  }
+
+  .pain-cloud--3 {
+    width: 240px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 46% 54% 50% 50% / 52% 48% 52% 48%;
+    box-shadow:
+      -22px -15px 0 -5px var(--pain-bubble-bg),
+      28px -18px 0 -7px var(--pain-bubble-bg),
+      -18px 20px 0 -8px var(--pain-bubble-bg),
+      25px 15px 0 -6px var(--pain-bubble-bg);
+  }
+
+  .pain-cloud--4 {
+    width: 260px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50% 46% 52% 48% / 48% 52% 46% 54%;
+    box-shadow:
+      -28px -20px 0 -7px var(--pain-bubble-bg),
+      20px -16px 0 -5px var(--pain-bubble-bg),
+      -24px 18px 0 -6px var(--pain-bubble-bg),
+      28px 20px 0 -8px var(--pain-bubble-bg);
+  }
+
+  .pain-cloud--5 {
+    width: 250px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 54% 46% 48% 52% / 50% 50% 48% 52%;
+    box-shadow:
+      -26px -14px 0 -6px var(--pain-bubble-bg),
+      24px -20px 0 -8px var(--pain-bubble-bg),
+      -20px 16px 0 -5px var(--pain-bubble-bg),
+      26px 18px 0 -7px var(--pain-bubble-bg);
+  }
+
+  /* SP版: 吹き出し配置 */
+  .pain-cloud--1 {
+    order: 1;
+    width: 220px;
+    height: 150px;
+    align-self: center;
+  }
+
+  .pain-cloud--2 {
+    order: 2;
+    width: 240px;
+    height: 140px;
+    align-self: center;
+  }
+
+  .pain-cloud--3 {
+    order: 4;
+    width: 210px;
+    height: 130px;
+    align-self: flex-start;
+  }
+
+  .pain-cloud--4 {
+    order: 5;
+    width: 230px;
+    height: 150px;
+    align-self: flex-end;
+  }
+
+  .pain-cloud--5 {
+    order: 6;
+    width: 220px;
+    height: 140px;
+    align-self: center;
+  }
+
+  /* SPではbox-shadowを小さめに */
+  .pain-cloud--1,
+  .pain-cloud--2,
+  .pain-cloud--3,
+  .pain-cloud--4,
+  .pain-cloud--5 {
+    box-shadow:
+      -18px -12px 0 -5px var(--pain-bubble-bg),
+      16px -10px 0 -4px var(--pain-bubble-bg),
+      -14px 12px 0 -5px var(--pain-bubble-bg),
+      18px 14px 0 -6px var(--pain-bubble-bg);
+  }
+
+  /* ── 波型区切り ── */
+  .pain-wave {
+    position: relative;
+    z-index: 4;
+    margin-top: -2px;
+  }
+
+  .pain-wave svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* ── 遷移テキスト ── */
+  .pain-transition {
+    background: var(--pain-transition-bg);
+    text-align: center;
+    padding: 28px 20px 44px;
+  }
+
+  .pain-transition-text {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    line-height: 1.6;
+    color: var(--pain-transition-color);
+  }
+
+  /* ── PC（サイズ拡大のみ、レイアウトはSPと同じ縦積み） ── */
+  @media (min-width: 768px) {
+    .pain-pointer-arrow {
+      border-left-width: 28px;
+      border-right-width: 28px;
+      border-top-width: 24px;
+    }
+
+    .pain-header {
+      padding: 60px 40px 16px;
+    }
+
+    .pain-header-title {
+      font-size: 40px;
+    }
+
+    .pain-header-title .accent {
+      font-size: 50px;
+    }
+
+    .pain-header-wave {
+      width: 240px;
+    }
+
+    .pain-content {
+      padding: 0 32px 40px;
+      gap: 20px;
+    }
+
+    .pain-person {
+      width: 340px;
+      height: 440px;
+      margin: 8px 0 0;
+    }
+
+    .pain-cloud {
+      padding: 28px 36px;
+      font-size: 26px;
+    }
+
+    .pain-cloud--1 { width: 380px; height: 260px; }
+    .pain-cloud--2 { width: 400px; height: 250px; }
+    .pain-cloud--3 { width: 360px; height: 230px; }
+    .pain-cloud--4 { width: 380px; height: 260px; }
+    .pain-cloud--5 { width: 370px; height: 240px; }
+
+    /* PC版: box-shadow拡大 */
+    .pain-cloud--1,
+    .pain-cloud--2,
+    .pain-cloud--3,
+    .pain-cloud--4,
+    .pain-cloud--5 {
+      box-shadow:
+        -30px -20px 0 -6px var(--pain-bubble-bg),
+        28px -16px 0 -5px var(--pain-bubble-bg),
+        -24px 18px 0 -6px var(--pain-bubble-bg),
+        26px 20px 0 -7px var(--pain-bubble-bg);
+    }
+
+    .pain-transition {
+      padding: 48px 32px 72px;
+    }
+
+    .pain-transition-text {
+      font-size: 36px;
+    }
+  }
+</style>
+</head>
+<body>
+  <section class="pain-section">
+
+    <!-- 上部ポインター -->
+    <div class="pain-pointer">
+      <div class="pain-pointer-arrow"></div>
+    </div>
+
+    <!-- 見出し -->
+    <div class="pain-header">
+      <h2 class="pain-header-title">こんな<span class="accent">お悩み</span>ありませんか？</h2>
+      <!-- 手書き風波線 -->
+      <svg class="pain-header-wave" viewBox="0 0 200 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 16 C20 4, 36 24, 52 12 C68 0, 84 20, 100 12 C116 4, 132 22, 148 12 C164 2, 180 18, 196 10" stroke="#fff" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+      </svg>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div class="pain-content">
+
+      <!-- 人物画像プレースホルダー -->
+      <div class="pain-person">
+        <div class="pain-person-inner">人物画像</div>
+      </div>
+
+      <!-- 吹き出し5つ -->
+      <div class="pain-cloud pain-cloud--1">
+        <span>パサつきが<br><span class="highlight">コンプレックス</span>…</span>
+      </div>
+
+      <div class="pain-cloud pain-cloud--2">
+        <span><span class="highlight">朝</span>、髪を整えるのに<br><span class="highlight">時間</span>がかかる…</span>
+      </div>
+
+      <div class="pain-cloud pain-cloud--3">
+        <span>好きな<span class="highlight">髪型</span>で<br>いられない…</span>
+      </div>
+
+      <div class="pain-cloud pain-cloud--4">
+        <span>サラサラで<br><span class="highlight">流れるような髪</span><br>がいい</span>
+      </div>
+
+      <div class="pain-cloud pain-cloud--5">
+        <span>美容室での<br>仕上がりが<span class="highlight">不安</span>…</span>
+      </div>
+
+    </div>
+
+    <!-- 波型区切り -->
+    <div class="pain-wave">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,60 C240,100 480,20 720,50 C960,80 1200,10 1440,40 L1440,100 L0,100 Z" fill="var(--pain-wave-fill)"/>
+      </svg>
+    </div>
+
+    <!-- 遷移テキスト -->
+    <div class="pain-transition">
+      <p class="pain-transition-text">そんなお悩みの方に</p>
+    </div>
+
+  </section>
+</body>
+</html>

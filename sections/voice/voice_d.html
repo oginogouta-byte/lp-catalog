@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root {
+    --voice-bg: #f5f9f9;
+    --voice-title-color: #070707;
+    --voice-subtitle-color: #070707;
+    --voice-card-bg: #fff;
+    --voice-card-radius: 30px;
+    --voice-badge-color: #888;
+    --voice-badge-border: #888;
+    --voice-category-color: #888;
+    --voice-card-title-color: #070707;
+    --voice-card-text-color: #070707;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .voice-section {
+    background: var(--voice-bg);
+    font-family: -apple-system, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    padding: 56px 0 56px;
+    overflow: hidden;
+  }
+
+  /* ── 見出し ── */
+  .voice-header {
+    text-align: center;
+    margin-bottom: 28px;
+    padding: 0 24px;
+  }
+
+  .voice-title {
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--voice-title-color);
+    margin-bottom: 16px;
+  }
+
+  .voice-subtitle {
+    font-size: 14px;
+    color: var(--voice-subtitle-color);
+    line-height: 1.8;
+  }
+
+  /* ── カードリスト（横スクロール） ── */
+  .voice-list {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 24px 16px;
+    scrollbar-width: none;
+  }
+
+  .voice-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ── カード ── */
+  .voice-card {
+    flex-shrink: 0;
+    width: 260px;
+    background: var(--voice-card-bg);
+    border-radius: var(--voice-card-radius);
+    padding: 24px 20px;
+    scroll-snap-align: start;
+  }
+
+  /* ── カード画像エリア ── */
+  .voice-card-img {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  /* イラストプレースホルダー */
+  .voice-card-illust {
+    width: 130px;
+    height: 150px;
+    background: #ddd;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #999;
+  }
+
+  /* 年齢バッジ */
+  .voice-card-badge {
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 1px solid var(--voice-badge-border);
+    background: var(--voice-card-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--voice-badge-color);
+    line-height: 1.3;
+  }
+
+  /* ── カテゴリ ── */
+  .voice-card-category {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--voice-category-color);
+    margin-bottom: 8px;
+  }
+
+  /* ── カードタイトル ── */
+  .voice-card-heading {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--voice-card-title-color);
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  /* ── カード本文 ── */
+  .voice-card-body {
+    font-size: 13px;
+    color: var(--voice-card-text-color);
+    line-height: 2.0;
+  }
+
+  /* ── プログレスバー ── */
+  .voice-progress {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+    padding: 0 24px;
+  }
+
+  .voice-progress-bar {
+    width: 120px;
+    height: 4px;
+    border-radius: 2px;
+    background: #ccc;
+  }
+
+  .voice-progress-bar.is-active {
+    background: var(--voice-badge-color);
+  }
+
+  /* ── PC（min-width: 768px） ── */
+  @media (min-width: 768px) {
+    .voice-section {
+      padding: 100px 0 100px;
+    }
+
+    .voice-header {
+      margin-bottom: 40px;
+    }
+
+    .voice-title {
+      font-size: 36px;
+    }
+
+    .voice-subtitle {
+      font-size: 15px;
+    }
+
+    .voice-list {
+      padding: 0 calc((100% - 1020px) / 2) 16px;
+      gap: 28px;
+    }
+
+    .voice-card {
+      width: 320px;
+      padding: 28px 26px;
+    }
+
+    .voice-card-illust {
+      width: 160px;
+      height: 180px;
+    }
+
+    .voice-card-badge {
+      width: 76px;
+      height: 76px;
+      font-size: 15px;
+      right: 20%;
+    }
+
+    .voice-card-heading {
+      font-size: 22px;
+    }
+
+    .voice-card-body {
+      font-size: 15px;
+      line-height: 2.0;
+    }
+
+    .voice-progress-bar {
+      width: 160px;
+    }
+  }
+</style>
+</head>
+<body>
+  <section class="voice-section">
+
+    <!-- 見出し -->
+    <div class="voice-header">
+      <h2 class="voice-title">みんなの体験談</h2>
+      <p class="voice-subtitle">使い方はさまざま！どんな活用の仕方があるか実際に聞いてみました。</p>
+    </div>
+
+    <!-- カードリスト -->
+    <div class="voice-list">
+
+      <!-- カード1 -->
+      <div class="voice-card">
+        <div class="voice-card-img">
+          <div class="voice-card-illust">イラスト画像</div>
+          <span class="voice-card-badge">30代<br>男性</span>
+        </div>
+        <p class="voice-card-category">家族・戸建ての防犯対策</p>
+        <h3 class="voice-card-heading">新居の戸締まりの不安を<br>解消したくて</h3>
+        <p class="voice-card-body">引越し先の新居のセキュリティを悩んでいたところ、リーフィーと出会い導入を決めました。工事不要で設置時の不明点もチャットで相談でき、安心して利用できました。</p>
+      </div>
+
+      <!-- カード2 -->
+      <div class="voice-card">
+        <div class="voice-card-img">
+          <div class="voice-card-illust">イラスト画像</div>
+          <span class="voice-card-badge">20代<br>女性</span>
+        </div>
+        <p class="voice-card-category">一人暮らしの不審者対策</p>
+        <h3 class="voice-card-heading">女性の一人暮らしの<br>不安を解消したくて</h3>
+        <p class="voice-card-body">家に帰った際に窓の鍵が空いていて、閉め忘れたかどうか覚えていないのが不安で利用を始めました。慌てて家を出た時も、後からアプリで戸締まりが確認できて安心です。</p>
+      </div>
+
+      <!-- カード3 -->
+      <div class="voice-card">
+        <div class="voice-card-img">
+          <div class="voice-card-illust">イラスト画像</div>
+          <span class="voice-card-badge">50代<br>女性</span>
+        </div>
+        <p class="voice-card-category">親御さんの安否確認</p>
+        <h3 class="voice-card-heading">独居の親の見守りを<br>したくて</h3>
+        <p class="voice-card-body">独居になった高齢の親の見守りのために利用を始めました。センサーの通知で元気に過ごしているか、程よい距離感で見守れることに親子で満足しています。</p>
+      </div>
+
+      <!-- カード4 -->
+      <div class="voice-card">
+        <div class="voice-card-img">
+          <div class="voice-card-illust">イラスト画像</div>
+          <span class="voice-card-badge">40代<br>経営者</span>
+        </div>
+        <p class="voice-card-category">オフィスのセキュリティ</p>
+        <h3 class="voice-card-heading">セキュリティ認証を<br>取得したくて</h3>
+        <p class="voice-card-body">大手の取引先が増え、ISMS等、セキュリティ認証の取得を求められました。センサーの反応通知や反応履歴機能で機密情報を扱うエリアのセキュリティを向上できました。</p>
+      </div>
+
+    </div>
+
+    <!-- プログレスバー -->
+    <div class="voice-progress">
+      <div class="voice-progress-bar is-active"></div>
+      <div class="voice-progress-bar"></div>
+    </div>
+
+  </section>
+</body>
+</html>

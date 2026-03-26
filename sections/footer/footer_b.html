@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  .footer {
+    padding: 60px 20px 32px;
+    background: #111;
+    font-family: -apple-system, sans-serif;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+  }
+  .footer-col h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+  .footer-col p {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.7;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul a {
+    font-size: 13px;
+    color: #888;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .footer-col ul a:hover { color: #fff; }
+  .footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .footer-bottom p {
+    font-size: 12px;
+    color: #555;
+  }
+  @media (min-width: 768px) {
+    .footer { padding: 100px 40px 48px; }
+    .footer-grid { gap: 48px; margin: 0 auto 60px; }
+    .footer-col h3 { font-size: 24px; margin-bottom: 24px; }
+    .footer-col p { font-size: 22px; }
+    .footer-col ul a { font-size: 22px; }
+    .footer-col ul li { margin-bottom: 16px; }
+    .footer-bottom { padding-top: 32px; }
+    .footer-bottom p { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>Sample Company</h3>
+        <p>ビジネスの成長を支援するオールインワンプラットフォーム。最先端のテクノロジーで、お客様の課題を解決します。</p>
+      </div>
+      <div class="footer-col">
+        <h3>サービス</h3>
+        <ul>
+          <li><a href="#">機能紹介</a></li>
+          <li><a href="#">料金プラン</a></li>
+          <li><a href="#">導入事例</a></li>
+          <li><a href="#">API連携</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>サポート</h3>
+        <ul>
+          <li><a href="#">ヘルプセンター</a></li>
+          <li><a href="#">お問い合わせ</a></li>
+          <li><a href="#">ステータスページ</a></li>
+          <li><a href="#">リリースノート</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>会社情報</h3>
+        <ul>
+          <li><a href="#">会社概要</a></li>
+          <li><a href="#">採用情報</a></li>
+          <li><a href="#">ブログ</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Sample Company, Inc. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

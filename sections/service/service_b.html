@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  .service-section {
+    padding: 80px 20px;
+    background: #fafafa;
+    font-family: -apple-system, sans-serif;
+  }
+  .service-section h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111;
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  .service-inner { max-width: 800px; margin: 0 auto; }
+  .tab-nav {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 32px;
+    justify-content: center;
+  }
+  .tab-nav button {
+    padding: 10px 24px;
+    border: 1px solid #d1d5db;
+    background: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #555;
+    font-family: inherit;
+    transition: all 0.15s;
+  }
+  .tab-nav button.active {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    color: #fff;
+  }
+  .tab-content { display: none; }
+  .tab-content.active { display: flex; flex-direction: column; gap: 32px; align-items: center; }
+  .tab-img {
+    flex: 1;
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6366f1;
+    font-weight: 600;
+    min-height: 200px;
+  }
+  .tab-text { flex: 1; }
+  .tab-text h3 { font-size: 20px; font-weight: 700; color: #111; margin-bottom: 12px; }
+  .tab-text p { font-size: 15px; color: #555; line-height: 1.8; }
+  .tab-img { width: 100%; }
+
+  @media (min-width: 768px) {
+    .service-section { padding: 140px 40px; }
+    .service-section h2 { font-size: 48px; margin-bottom: 56px; }
+    .tab-nav button { padding: 16px 40px; font-size: 24px; }
+    .tab-content.active { gap: 48px; }
+    .tab-img { min-height: 360px; }
+    .tab-text h3 { font-size: 34px; margin-bottom: 20px; }
+    .tab-text p { font-size: 26px; line-height: 1.8; }
+  }
+</style>
+</head>
+<body>
+  <section class="service-section">
+    <h2>プラン紹介</h2>
+    <div class="service-inner">
+      <div class="tab-nav">
+        <button class="active" onclick="switchServiceTab(0)">プランA</button>
+        <button onclick="switchServiceTab(1)">プランB</button>
+        <button onclick="switchServiceTab(2)">プランC</button>
+      </div>
+      <div class="tab-content active">
+        <div class="tab-img">IMAGE</div>
+        <div class="tab-text">
+          <h3>スタータープラン</h3>
+          <p>小規模チーム向け。基本的な業務自動化機能とレポーティング機能を搭載。まずは手軽に始めたい方に最適です。</p>
+        </div>
+      </div>
+      <div class="tab-content">
+        <div class="tab-img">IMAGE</div>
+        <div class="tab-text">
+          <h3>ビジネスプラン</h3>
+          <p>成長中の企業向け。高度な分析機能やAPI連携など、ビジネスの拡大をサポートする機能を搭載しています。</p>
+        </div>
+      </div>
+      <div class="tab-content">
+        <div class="tab-img">IMAGE</div>
+        <div class="tab-text">
+          <h3>エンタープライズプラン</h3>
+          <p>大規模組織向け。専用環境・SLA保証・専任サポートなど、ミッションクリティカルな要件にも対応します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    function switchServiceTab(idx) {
+      document.querySelectorAll('.tab-nav button').forEach((btn, i) => btn.classList.toggle('active', i === idx));
+      document.querySelectorAll('.tab-content').forEach((tab, i) => tab.classList.toggle('active', i === idx));
+    }
+  </script>
+</body>
+</html>

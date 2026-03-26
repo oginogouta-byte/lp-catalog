@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  .voice-section {
+    padding: 80px 20px;
+    background: #fff;
+    font-family: -apple-system, sans-serif;
+  }
+  .voice-section h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .voice-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 800px;
+    margin-inline: auto;
+  }
+  .voice-card {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 32px 24px;
+    text-align: center;
+  }
+  .avatar {
+    width: 64px;
+    height: 64px;
+    background: #d1d5db;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+  }
+  .stars { color: #f59e0b; font-size: 16px; margin-bottom: 16px; }
+  .voice-card blockquote {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 16px;
+  }
+  .voice-card .name { font-size: 14px; font-weight: 700; color: #111; }
+  .voice-card .role { font-size: 12px; color: #888; }
+  @media (min-width: 768px) {
+    .voice-section {
+      padding: 140px 40px;
+    }
+    .voice-section h2 {
+      font-size: 48px;
+      margin-bottom: 72px;
+    }
+    .voice-grid {
+      gap: 36px;
+      max-width: 1000px;
+    }
+    .voice-card {
+      padding: 48px 36px;
+      border-radius: 20px;
+    }
+    .avatar {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 24px;
+    }
+    .stars { font-size: 24px; margin-bottom: 24px; }
+    .voice-card blockquote {
+      font-size: 18px;
+      margin-bottom: 24px;
+    }
+    .voice-card .name { font-size: 18px; }
+    .voice-card .role { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+  <section class="voice-section">
+    <h2>お客様の声</h2>
+    <div class="voice-grid">
+      <div class="voice-card">
+        <div class="avatar"></div>
+        <div class="stars">★★★★★</div>
+        <blockquote>「導入後すぐに効果を実感しました。特にレポート作成の時間が劇的に短縮され、本来の業務に集中できるようになりました。」</blockquote>
+        <div class="name">田中 太郎</div>
+        <div class="role">株式会社サンプル / 営業部長</div>
+      </div>
+      <div class="voice-card">
+        <div class="avatar"></div>
+        <div class="stars">★★★★★</div>
+        <blockquote>「サポート体制が素晴らしい。わからないことがあってもすぐに対応してもらえるので、安心して利用できています。」</blockquote>
+        <div class="name">佐藤 花子</div>
+        <div class="role">合同会社テスト / CEO</div>
+      </div>
+      <div class="voice-card">
+        <div class="avatar"></div>
+        <div class="stars">★★★★☆</div>
+        <blockquote>「チーム全体の情報共有がスムーズになり、会議の時間が半分になりました。もっと早く導入すべきでした。」</blockquote>
+        <div class="name">鈴木 一郎</div>
+        <div class="role">株式会社デモ / 開発マネージャー</div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

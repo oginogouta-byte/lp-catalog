@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  .faq-section {
+    padding: 80px 20px;
+    background: #fff;
+    font-family: -apple-system, sans-serif;
+  }
+  .faq-section h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .faq-list { max-width: 700px; margin: 0 auto; }
+  .faq-item {
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+  }
+  .faq-q .icon {
+    font-size: 20px;
+    color: #888;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+  .faq-item.open .faq-q .icon { transform: rotate(45deg); }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .faq-item.open .faq-a { max-height: 200px; }
+  .faq-a p {
+    padding: 0 0 20px;
+    font-size: 15px;
+    color: #666;
+    line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+  <section class="faq-section">
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">導入にどのくらいの期間がかかりますか？<span class="icon">+</span></button>
+        <div class="faq-a"><p>最短3営業日で導入可能です。お客様の環境やカスタマイズ内容によって異なりますが、通常1〜2週間程度で運用開始いただけます。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">無料トライアルはありますか？<span class="icon">+</span></button>
+        <div class="faq-a"><p>はい、14日間の無料トライアルをご用意しています。クレジットカードの登録なしでお試しいただけます。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">既存のシステムと連携できますか？<span class="icon">+</span></button>
+        <div class="faq-a"><p>主要なSaaS製品とのAPI連携に対応しています。Salesforce、Slack、Google Workspace、Microsoft 365 等と連携可能です。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">セキュリティ対策はどうなっていますか？<span class="icon">+</span></button>
+        <div class="faq-a"><p>ISO27001認証取得済みです。データは暗号化して保管し、定期的なセキュリティ監査を実施しています。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">解約はいつでもできますか？<span class="icon">+</span></button>
+        <div class="faq-a"><p>はい、月次契約の場合はいつでも解約可能です。年次契約の場合も、契約期間終了時に解約いただけます。</p></div>
+      </div>
+    </div>
+  </section>
+  <script>
+    function toggleFaq(btn) {
+      btn.closest('.faq-item').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

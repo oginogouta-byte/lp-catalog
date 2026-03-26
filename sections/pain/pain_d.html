@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .pain-section {
+    padding: 72px 0;
+    background: #f5f5f0;
+    font-family: -apple-system, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    color: #333;
+  }
+
+  /* ── 見出しエリア ── */
+  .pain-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 24px;
+  }
+
+  .pain-header-en {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: #999;
+    line-height: 1;
+  }
+
+  .pain-header-title {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1.6;
+    margin-top: 12px;
+    color: #333;
+  }
+
+  .pain-header-desc {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    line-height: 2;
+    margin-top: 16px;
+    color: #666;
+  }
+
+  /* ── 吹き出しコンテナ ── */
+  .pain-bubbles {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    max-width: 340px;
+    margin-inline: auto;
+    padding: 0 20px;
+  }
+
+  /* ── 吹き出しアイテム ── */
+  .pain-bubble {
+    position: relative;
+    background: #e8e6e0;
+    border-radius: 24px;
+    padding: 18px 24px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    line-height: 1.7;
+    color: #444;
+    max-width: none;
+    width: 78%;
+  }
+
+  /* 少し重ねる */
+  .pain-bubble + .pain-bubble {
+    margin-top: -4px;
+  }
+
+  /* 吹き出しの尻尾 */
+  .pain-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    width: 18px;
+    height: 12px;
+    background: #e8e6e0;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+  }
+
+  /* 奇数: 尻尾を左寄せ / 右寄せ配置 */
+  .pain-bubble:nth-child(odd)::after {
+    left: 32px;
+  }
+  .pain-bubble:nth-child(odd) {
+    align-self: flex-end;
+  }
+
+  /* 偶数: 尻尾を右寄せ / 左寄せ配置 */
+  .pain-bubble:nth-child(even)::after {
+    right: 32px;
+  }
+  .pain-bubble:nth-child(even) {
+    align-self: flex-start;
+  }
+
+  /* ── PC: サイズ拡大のみ（レイアウトはSPと同じ縦積み） ── */
+  @media (min-width: 768px) {
+    .pain-section {
+      padding: 120px 0;
+    }
+
+    .pain-header {
+      margin-bottom: 64px;
+      padding: 0 24px;
+    }
+
+    .pain-header-en {
+      font-size: 22px;
+    }
+
+    .pain-header-title {
+      font-size: 42px;
+    }
+
+    .pain-header-desc {
+      font-size: 26px;
+    }
+
+    .pain-bubbles {
+      max-width: 600px;
+      padding: 0 40px;
+      gap: 0;
+    }
+
+    .pain-bubble {
+      padding: 32px 40px;
+      font-size: 26px;
+      border-radius: 40px;
+      width: 85%;
+    }
+
+    .pain-bubble + .pain-bubble {
+      margin-top: -6px;
+    }
+
+    .pain-bubble::after {
+      bottom: -20px;
+      width: 30px;
+      height: 20px;
+    }
+
+    .pain-bubble:nth-child(odd)::after {
+      left: 52px;
+    }
+
+    .pain-bubble:nth-child(even)::after {
+      right: 52px;
+    }
+  }
+</style>
+</head>
+<body>
+  <section class="pain-section">
+
+    <!-- 見出し -->
+    <div class="pain-header">
+      <p class="pain-header-en">Q&amp;A</p>
+      <h2 class="pain-header-title">こんなお悩み<br>ありませんか？</h2>
+      <p class="pain-header-desc">一人で抱え込まず、<br>まずはお気軽にご相談ください。</p>
+    </div>
+
+    <!-- 吹き出し -->
+    <div class="pain-bubbles">
+
+      <div class="pain-bubble">
+        当日に施術は<br>できますか？
+      </div>
+
+      <div class="pain-bubble">
+        駐車場は<br>ありますか？
+      </div>
+
+      <div class="pain-bubble">
+        支払いにクレジットカードは<br>使えますか？
+      </div>
+
+      <div class="pain-bubble">
+        痛みは<br>ありますか？
+      </div>
+
+      <div class="pain-bubble">
+        ダウンタイムは<br>どのくらいですか？
+      </div>
+
+    </div>
+
+  </section>
+</body>
+</html>

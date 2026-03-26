@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .benefit-section {
+    padding: 80px 0;
+    background: #fff;
+    font-family: -apple-system, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    color: #000;
+  }
+
+  /* ── セクション見出し ── */
+  .benefit-section-heading {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .benefit-section-heading-en {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1;
+    color: #000;
+  }
+
+  .benefit-section-heading-ja {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: #858585;
+    margin-top: 10px;
+    line-height: 1;
+  }
+
+  /* ── 縦積み（SPデフォルト） ── */
+  .benefit-features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    max-width: 800px;
+    margin-inline: auto;
+    padding: 0 28px;
+    counter-reset: featureCount;
+  }
+
+  /* ── 各アイテム ── */
+  .benefit-feature-item {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    counter-increment: featureCount;
+  }
+
+  .benefit-feature-item + .benefit-feature-item {
+    margin-top: 64px;
+  }
+
+  /* 画像（上に表示 — column-reverse） */
+  .benefit-feature-image {
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    background: #d5d5d5;
+    position: relative;
+  }
+
+  .benefit-feature-image-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    color: rgba(0,0,0,0.2);
+    font-weight: 600;
+  }
+
+  /* テキストエリア（番号が画像に被る） */
+  .benefit-feature-texts {
+    margin: -16px 14px 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* カウンター番号 */
+  .benefit-feature-texts::before {
+    content: counter(featureCount, decimal-leading-zero) " ";
+    font-size: 36px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    display: block;
+    color: #000;
+  }
+
+  /* タイトル */
+  .benefit-feature-title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.7;
+    letter-spacing: 0.2em;
+    margin-top: 18px;
+    color: #000;
+  }
+
+  /* マーカー下線（モノクロ：薄い黒） */
+  .benefit-feature-title strong {
+    font-weight: 700;
+    background: linear-gradient(transparent 64%, rgba(0,0,0,0.12) 64%, rgba(0,0,0,0.12) 94%, transparent 100%);
+  }
+
+  /* 説明文 */
+  .benefit-feature-desc {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 2;
+    letter-spacing: 0.2em;
+    margin-top: 14px;
+    color: #000;
+  }
+
+  /* ================================
+     PC（min-width: 768px）
+     ================================ */
+  @media (min-width: 768px) {
+    .benefit-section {
+      padding: 140px 0;
+    }
+
+    .benefit-section-heading {
+      margin-bottom: 80px;
+    }
+
+    .benefit-section-heading-en {
+      font-size: 48px;
+      letter-spacing: 0.12em;
+    }
+
+    .benefit-section-heading-ja {
+      font-size: 24px;
+      margin-top: 16px;
+    }
+
+    .benefit-features {
+      gap: 0;
+      padding: 0 40px;
+    }
+
+    .benefit-feature-item + .benefit-feature-item {
+      margin-top: 96px;
+    }
+
+    .benefit-feature-image {
+      border-radius: 16px;
+    }
+
+    .benefit-feature-texts {
+      margin: -28px 20px 0;
+    }
+
+    .benefit-feature-texts::before {
+      font-size: 56px;
+    }
+
+    .benefit-feature-title {
+      font-size: 32px;
+      margin-top: 24px;
+    }
+
+    .benefit-feature-desc {
+      font-size: 26px;
+      margin-top: 20px;
+    }
+  }
+</style>
+</head>
+<body>
+  <section class="benefit-section">
+
+    <!-- セクション見出し -->
+    <div class="benefit-section-heading">
+      <h2 class="benefit-section-heading-en">Features</h2>
+      <p class="benefit-section-heading-ja">- 3つの特徴 -</p>
+    </div>
+
+    <!-- 3カラム -->
+    <div class="benefit-features">
+
+      <!-- 01 -->
+      <div class="benefit-feature-item">
+        <div class="benefit-feature-texts">
+          <h3 class="benefit-feature-title">
+            診察と処方は<br><strong>医師が行うから安心</strong>
+          </h3>
+          <p class="benefit-feature-desc">
+            大切にしているのは「向き合う」こと。<br>
+            一人ひとりの悩みや不安に<br>
+            寄り添う診療を行います。
+          </p>
+        </div>
+        <div class="benefit-feature-image">
+          <span class="benefit-feature-image-label">IMAGE</span>
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <div class="benefit-feature-item">
+        <div class="benefit-feature-texts">
+          <h3 class="benefit-feature-title">
+            <strong>医学的に効果が証明</strong>された<br>治療薬中心に処方
+          </h3>
+          <p class="benefit-feature-desc">
+            大切な身体に入れるお薬だからこそ、<br>
+            国が承認した正規薬を中心に<br>
+            取り扱っています。
+          </p>
+        </div>
+        <div class="benefit-feature-image">
+          <span class="benefit-feature-image-label">IMAGE</span>
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="benefit-feature-item">
+        <div class="benefit-feature-texts">
+          <h3 class="benefit-feature-title">
+            <strong>オンライン診療</strong>だから、<br>いつでも、どこでも
+          </h3>
+          <p class="benefit-feature-desc">
+            わざわざクリニックに<br>
+            行かなくたって、いいんです。<br>
+            場所や時間を気にせずに、<br>
+            気軽に受診してください。
+          </p>
+        </div>
+        <div class="benefit-feature-image">
+          <span class="benefit-feature-image-label">IMAGE</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--
+  Section Parts Catalog: Intro_G（トレースからカタログ登録）
+  トレース元: https://shimekiri-techo.words-inc.co.jp/
+  対象: 「〆切を制するものは、人生を制する」ブロック
+  セクション種別: intro（コンセプト・背景画像+テキストオーバーレイ）
+  構造:
+    - 背景: フルブリード写真 + 暗めオーバーレイ → モノクロトレースではダークグレー
+    - 見出し: 大きめ、白文字、左寄せ
+    - リード文: 中サイズ、白文字
+    - 本文: 小サイズ、白文字、段落ごとに gap で余白
+    - PC/SP同一レイアウト（1カラム左寄せ）。PCではフォントサイズのみ拡大。
+-->
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --lp-max-width: 800px;
+  }
+
+  .intro-section {
+    position: relative;
+    background: #777 center / cover no-repeat;
+    font-family: -apple-system, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    color: #fff;
+    overflow: hidden;
+  }
+
+  /* ── 背景画像プレースホルダー（実運用では background-image を差し替え） ── */
+  .intro-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(50, 50, 50, 0.25);
+    pointer-events: none;
+  }
+
+  .intro-shell {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: var(--lp-max-width);
+    margin-inline: auto;
+    padding: 82px 24px 52px;
+  }
+
+  /* ── 見出し ── */
+  .intro-title {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #fff;
+    margin-bottom: 40px;
+  }
+
+  /* ── リード文 ── */
+  .intro-lead {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+    color: #fff;
+    text-align: justify;
+    margin-bottom: 24px;
+  }
+
+  /* ── 本文（段落群） ── */
+  .intro-body {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .intro-body p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 2.2;
+    color: #fff;
+    text-align: justify;
+  }
+
+  /* ── 締めの一文（太め） ── */
+  .intro-body p:last-child {
+    font-weight: 600;
+  }
+
+  /* ================================
+     PC（min-width: 768px）
+     ================================ */
+  @media (min-width: 768px) {
+    .intro-shell {
+      padding: 118px 24px 144px;
+    }
+
+    .intro-title {
+      font-size: 56px;
+      line-height: 1.1;
+      margin-bottom: 48px;
+    }
+
+    .intro-lead {
+      font-size: 32px;
+      line-height: 1.4;
+      margin-bottom: 36px;
+    }
+
+    .intro-body {
+      gap: 36px;
+    }
+
+    .intro-body p {
+      font-size: 24px;
+      line-height: 2.0;
+    }
+  }
+</style>
+</head>
+<body>
+  <section class="intro-section">
+    <div class="intro-shell">
+
+      <h2 class="intro-title">〆切を制するものは、<br>人生を制する</h2>
+
+      <p class="intro-lead">複数の案件を抱え、いつも〆切に追われている編集者が「もう２度と〆切に遅れたくない」と開発したのがこの「〆切手帳」です。</p>
+
+      <div class="intro-body">
+        <p>プロジェクトを洗い出し、〆切を設定し、日々の「やるべきこと」に落とし込む。あとは淡々とやるだけで、気づけば〆切を守れている――。</p>
+        <p>そんな体験を目指しました。</p>
+        <p>この手帳があれば、〆切前日にあわてて徹夜することは、なくなります。プロジェクトがズルズルと先延ばしされることも、なくなります。「他の案件が気になって、目の前の作業に集中できない」なんてことも、なくなります。</p>
+        <p>やりたいことを、期限どおりに実現する。そうすれば仕事だけでなく、人生すら好転していくはず。</p>
+        <p>〆切を制するものは、人生を制するのです。</p>
+      </div>
+
+    </div>
+  </section>
+</body>
+</html>

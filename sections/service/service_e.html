@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service_E — サービス左見出し＋右2列カードグリッド型</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: sans-serif; background: #fff; color: #111; }
+
+    /* ── セクション全体: 黒背景 ── */
+    .sv-section {
+      background: #111;
+      color: #fff;
+    }
+
+    /* ── コンテンツ最大幅 ── */
+    .sv-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* ── SP: 見出しブロック + カードリスト 縦積み ── */
+    .sv-wrap {
+      display: block;
+    }
+
+    /* ── 左: 見出しエリア ── */
+    .sv-left {
+      width: 100%;
+    }
+
+    /* ── 見出し ── */
+    .sv-heading {
+      font-size: 27px;
+      font-weight: 400;
+      line-height: 31px;
+      letter-spacing: 0.4px;
+      padding: 10px 18px 9px;
+      border-bottom: 2px solid #fff;
+    }
+
+    /* PC用の改行は SP で非表示 */
+    .sv-heading__br { display: none; }
+
+    /* ── 右: カードリスト ── */
+    .sv-right {
+      width: 100%;
+    }
+
+    .sv-cardlist {
+      list-style: none;
+    }
+
+    /* ── カード 1件 ── */
+    .sv-card {
+      padding: 45px 0 50px;
+      border-bottom: 2px solid #fff;
+    }
+
+    /* カード内コンテンツの左右余白 */
+    .sv-card__title,
+    .sv-card__heading,
+    .sv-card__text {
+      margin-left: 18px;
+      margin-right: 18px;
+    }
+
+    /* 英語ラベル */
+    .sv-card__title {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 25px;
+      letter-spacing: 0.8px;
+    }
+
+    /* 日本語見出し */
+    .sv-card__heading {
+      font-size: 27px;
+      font-weight: 400;
+      line-height: 35px;
+      margin-top: 5px;
+      margin-bottom: 8px;
+    }
+
+    /* 本文 */
+    .sv-card__text {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+      margin-top: 1px;
+      margin-bottom: 39px;
+    }
+
+    /* ── アイコンプレースホルダー: SP 188×188px 中央 ── */
+    .sv-card__icon {
+      width: 188px;
+      height: 188px;
+      margin: 0 auto;
+      background: #333;
+      border-radius: 4px;
+    }
+
+    /* ── PC (≥768px): SPと同カラム構造、サイズ差分のみ ── */
+    @media (min-width: 768px) {
+      .sv-heading {
+        font-size: 46px;
+        line-height: 52px;
+      }
+
+      .sv-card__icon {
+        width: 173px;
+        height: 173px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section class="sv-section">
+  <div class="sv-inner">
+    <div class="sv-wrap">
+
+      <!-- 左: 見出し -->
+      <div class="sv-left">
+        <h2 class="sv-heading">OUR<br class="sv-heading__br"> SERVICE</h2>
+      </div>
+
+      <!-- 右: 4サービスカード -->
+      <div class="sv-right">
+        <ul class="sv-cardlist">
+
+          <li class="sv-card">
+            <p class="sv-card__title">PRODUCT WHOLESALE</p>
+            <h3 class="sv-card__heading">商品卸売販売</h3>
+            <p class="sv-card__text">自社で企画・提携OEM工場で製造した商品を全国のドラッグストア・GMSやスーパーマーケット、公式オンラインストアにて販売。</p>
+            <div class="sv-card__icon"></div>
+          </li>
+
+          <li class="sv-card">
+            <p class="sv-card__title">OEM PRODUCT</p>
+            <h3 class="sv-card__heading">OEM受託製造</h3>
+            <p class="sv-card__text">自社企画商品及び他社様よりリブランド依頼を頂いた商品を提携OEM工場にて製造。</p>
+            <div class="sv-card__icon"></div>
+          </li>
+
+          <li class="sv-card">
+            <p class="sv-card__title">PRODUCT PLANNING / REBRANDING</p>
+            <h3 class="sv-card__heading">化粧品・雑貨・食品等の企画</h3>
+            <p class="sv-card__text">化粧品・雑貨や食品等をゼロから企画・製造。</p>
+            <div class="sv-card__icon"></div>
+          </li>
+
+          <li class="sv-card">
+            <p class="sv-card__title">E-COMMERCE</p>
+            <h3 class="sv-card__heading">EC事業</h3>
+            <p class="sv-card__text">クリエイター(TikToker / YouTuber / Instagrammer等)を巻き込んだ新しいSNSマーケティング手法でEC販売を行っている。</p>
+            <div class="sv-card__icon"></div>
+          </li>
+
+        </ul>
+      </div><!-- /.sv-right -->
+
+    </div><!-- /.sv-wrap -->
+  </div><!-- /.sv-inner -->
+</section>
+
+</body>
+</html>

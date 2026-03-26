@@ -1,0 +1,9 @@
+# アーカイブ（古いバージョン）は除外
+_archive/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Node
+node_modules/

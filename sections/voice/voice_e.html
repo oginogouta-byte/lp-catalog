@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root {
+    --voice-bg: #f5f9f9;
+    --voice-title-color: #070707;
+    --voice-subtitle-color: #070707;
+    --voice-card-radius: 20px;
+    --voice-bar-color: #888;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .voice-section {
+    background: var(--voice-bg);
+    font-family: -apple-system, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    padding: 56px 0 56px;
+    overflow: hidden;
+  }
+
+  /* ── 見出し ── */
+  .voice-header {
+    text-align: center;
+    margin-bottom: 28px;
+    padding: 0 24px;
+  }
+
+  .voice-title {
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--voice-title-color);
+    margin-bottom: 16px;
+  }
+
+  .voice-subtitle {
+    font-size: 14px;
+    color: var(--voice-subtitle-color);
+    line-height: 1.8;
+  }
+
+  /* ── カルーセル（横スクロール） ── */
+  .voice-carousel {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 24px 16px;
+    scrollbar-width: none;
+  }
+
+  .voice-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ── 画像カード ── */
+  .voice-img-card {
+    flex-shrink: 0;
+    width: 280px;
+    height: 400px;
+    border-radius: var(--voice-card-radius);
+    overflow: hidden;
+    scroll-snap-align: start;
+  }
+
+  .voice-img-card-inner {
+    width: 100%;
+    height: 100%;
+    background: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #999;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── プログレスバー ── */
+  .voice-progress {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+    padding: 0 24px;
+  }
+
+  .voice-progress-bar {
+    width: 120px;
+    height: 4px;
+    border-radius: 2px;
+    background: #ccc;
+  }
+
+  .voice-progress-bar.is-active {
+    background: var(--voice-bar-color);
+  }
+
+  /* ── PC（min-width: 768px） ── */
+  @media (min-width: 768px) {
+    .voice-section {
+      padding: 100px 0 100px;
+    }
+
+    .voice-header {
+      margin-bottom: 40px;
+    }
+
+    .voice-title {
+      font-size: 36px;
+    }
+
+    .voice-subtitle {
+      font-size: 15px;
+    }
+
+    .voice-carousel {
+      padding: 0 calc((100% - 1060px) / 2) 16px;
+      gap: 24px;
+    }
+
+    .voice-img-card {
+      width: 340px;
+      height: 480px;
+    }
+
+    .voice-progress-bar {
+      width: 160px;
+    }
+  }
+</style>
+</head>
+<body>
+  <section class="voice-section">
+
+    <!-- 見出し -->
+    <div class="voice-header">
+      <h2 class="voice-title">お客様の声</h2>
+      <p class="voice-subtitle">実際にご利用いただいたお客様の声をご紹介します。</p>
+    </div>
+
+    <!-- 画像カルーセル -->
+    <div class="voice-carousel">
+
+      <div class="voice-img-card">
+        <div class="voice-img-card-inner">事例画像 1</div>
+      </div>
+
+      <div class="voice-img-card">
+        <div class="voice-img-card-inner">事例画像 2</div>
+      </div>
+
+      <div class="voice-img-card">
+        <div class="voice-img-card-inner">事例画像 3</div>
+      </div>
+
+      <div class="voice-img-card">
+        <div class="voice-img-card-inner">事例画像 4</div>
+      </div>
+
+      <div class="voice-img-card">
+        <div class="voice-img-card-inner">事例画像 5</div>
+      </div>
+
+    </div>
+
+    <!-- プログレスバー -->
+    <div class="voice-progress">
+      <div class="voice-progress-bar is-active"></div>
+      <div class="voice-progress-bar"></div>
+    </div>
+
+  </section>
+</body>
+</html>

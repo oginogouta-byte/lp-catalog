@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section Parts Catalog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="header">
+    <h1>Section Parts Catalog</h1>
+  </div>
+
+  <div class="tabs" id="tabs"></div>
+
+  <div class="card-grid" id="cardGrid"></div>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-body">
+        <iframe id="modalIframe" src="about:blank"></iframe>
+      </div>
+      <div class="modal-footer">
+        <span id="modalLabel" style="flex:1;color:#333;font-size:14px;font-weight:600;"></span>
+        <div class="view-toggle">
+          <button class="view-btn active" data-view="pc" id="viewPc">PC</button>
+          <button class="view-btn" data-view="sp" id="viewSp">SP</button>
+        </div>
+        <button class="btn-select" id="modalSelectBtn">このパーツを選択</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="bottom-bar empty" id="bottomBar">
+    <div class="bottom-bar-inner">
+      <span class="bottom-label">選択済み:</span>
+      <div class="selected-chips" id="selectedChips"></div>
+      <div class="bottom-actions">
+        <button onclick="clearSelection()">クリア</button>
+        <button class="btn-copy" onclick="copySelection()">組み合わせをコピー</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js?v=20260318k"></script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .pain-section {
+    padding: 64px 0;
+    background: #fff;
+    font-family: -apple-system, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    color: #333;
+  }
+
+  /* ── 見出し ── */
+  .pain-header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .pain-header-en {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: #999;
+    line-height: 1;
+  }
+
+  .pain-header-title {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.5;
+    margin-top: 12px;
+    color: #222;
+  }
+
+  /* ── リスト ── */
+  .pain-items {
+    max-width: 800px;
+    margin-inline: auto;
+    padding: 0 20px;
+  }
+
+  /* ── 各アイテム ── */
+  .pain-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  /* 偶数: 左右反転 */
+  .pain-item:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .pain-item + .pain-item {
+    margin-top: 12px;
+  }
+
+  /* アイコン（人物シルエットプレースホルダー） */
+  .pain-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    margin-top: 4px;
+    background: #d5d5d5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pain-icon span {
+    font-size: 8px;
+    color: rgba(0,0,0,0.2);
+    font-weight: 600;
+  }
+
+  /* 吹き出し */
+  .pain-balloon {
+    position: relative;
+    background: #fff;
+    border: 2px solid #999;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-left: 8px;
+    flex: 1;
+  }
+
+  /* 偶数: 吹き出しのmarginを反転 */
+  .pain-item:nth-child(even) .pain-balloon {
+    margin-left: 0;
+    margin-right: 8px;
+  }
+
+  /* 吹き出しの尻尾（枠色の三角）— 左向き */
+  .pain-balloon::before {
+    content: '';
+    position: absolute;
+    top: 13px;
+    left: -13px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 13px 8px 0;
+    border-color: transparent #999 transparent transparent;
+  }
+
+  /* 吹き出しの尻尾（白い三角で枠を消す）— 左向き */
+  .pain-balloon::after {
+    content: '';
+    position: absolute;
+    top: 13px;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 13px 8px 0;
+    border-color: transparent #fff transparent transparent;
+  }
+
+  /* 偶数: 尻尾を右向きに */
+  .pain-item:nth-child(even) .pain-balloon::before {
+    left: auto;
+    right: -13px;
+    border-width: 8px 0 8px 13px;
+    border-color: transparent transparent transparent #999;
+  }
+
+  .pain-item:nth-child(even) .pain-balloon::after {
+    left: auto;
+    right: -10px;
+    border-width: 8px 0 8px 13px;
+    border-color: transparent transparent transparent #fff;
+  }
+
+  .pain-balloon-text {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+    color: #555;
+  }
+
+  .pain-balloon-name {
+    display: block;
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #888;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── PC ── */
+  @media (min-width: 768px) {
+    .pain-section {
+      padding: 120px 0;
+    }
+
+    .pain-header {
+      margin-bottom: 56px;
+    }
+
+    .pain-header-en {
+      font-size: 32px;
+    }
+
+    .pain-header-title {
+      font-size: 48px;
+    }
+
+    .pain-items {
+      padding: 0 40px;
+    }
+
+    .pain-item + .pain-item {
+      margin-top: 40px;
+    }
+
+    .pain-icon {
+      width: 88px;
+      height: 88px;
+      margin-top: 0;
+    }
+
+    .pain-icon span {
+      font-size: 14px;
+    }
+
+    .pain-balloon {
+      padding: 20px 28px;
+      margin-left: 16px;
+    }
+
+    .pain-item:nth-child(even) .pain-balloon {
+      margin-left: 0;
+      margin-right: 16px;
+    }
+
+    .pain-balloon::before {
+      top: 20px;
+      left: -16px;
+      border-width: 10px 16px 10px 0;
+    }
+
+    .pain-balloon::after {
+      top: 20px;
+      left: -12px;
+      border-width: 10px 16px 10px 0;
+    }
+
+    .pain-item:nth-child(even) .pain-balloon::before {
+      left: auto;
+      right: -16px;
+      border-width: 10px 0 10px 16px;
+      border-color: transparent transparent transparent #999;
+    }
+
+    .pain-item:nth-child(even) .pain-balloon::after {
+      left: auto;
+      right: -12px;
+      border-width: 10px 0 10px 16px;
+      border-color: transparent transparent transparent #fff;
+    }
+
+    .pain-balloon-text {
+      font-size: 24px;
+      line-height: 1.75;
+    }
+
+    .pain-balloon-name {
+      font-size: 22px;
+      margin-top: 14px;
+    }
+  }
+</style>
+</head>
+<body>
+  <section class="pain-section">
+
+    <!-- 見出し -->
+    <div class="pain-header">
+      <p class="pain-header-en">VOICE</p>
+      <h2 class="pain-header-title">こんなお悩みありませんか？</h2>
+    </div>
+
+    <!-- リスト -->
+    <div class="pain-items">
+
+      <!-- 01 -->
+      <div class="pain-item">
+        <div class="pain-icon"><span>ICON</span></div>
+        <div class="pain-balloon">
+          <p class="pain-balloon-text">
+            手元に一定額のキャッシュを残しつつ、売上を拡大させられるのは理想的です。<br>
+            あと、現金の入出金が銀行振込などのように発生しないので、経費精算の面でも楽になります。
+          </p>
+          <span class="pain-balloon-name">（アパレル事業者A様）</span>
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <div class="pain-item">
+        <div class="pain-icon"><span>ICON</span></div>
+        <div class="pain-balloon">
+          <p class="pain-balloon-text">
+            海外からの仕入れに使っています。<br>
+            予想以上に売れたときなどに追加発注がすぐにできるので便利です。<br>
+            普通のクレジットカードは月末には限度額が少なくなっていくのですが、Cycleは月末にかけて限度額が上がっていくのでそこも良いですね。
+          </p>
+          <span class="pain-balloon-name">（個人事業主B様）</span>
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="pain-item">
+        <div class="pain-icon"><span>ICON</span></div>
+        <div class="pain-balloon">
+          <p class="pain-balloon-text">
+            与信審査がなく、年会費も手数料も無料とのことで、試しに申し込んでみました。<br>
+            複数枚の発行が無料でできて、社員に持たせることで経費分のキャッシュバックが付きますので、会社のコストダウンにつながりました。
+          </p>
+          <span class="pain-balloon-name">（旅行会社C様）</span>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+</body>
+</html>

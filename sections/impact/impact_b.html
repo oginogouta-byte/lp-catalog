@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root {
+    --impact-bg: #ddd;
+    --impact-label-color: #888;
+    --impact-label-bg: #fff;
+    --impact-text-color: #333;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .impact-section {
+    background: var(--impact-bg);
+    font-family: -apple-system, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    text-align: center;
+    padding: 56px 0;
+  }
+
+  .impact-inner {
+    padding: 0 28px;
+  }
+
+  /* ── セクションラベル ── */
+  .impact-label {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--impact-label-color);
+    background: var(--impact-label-bg);
+    padding: 6px 20px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+
+  /* ── 見出し ── */
+  .impact-headline {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--impact-text-color);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  /* ── リード文 ── */
+  .impact-lead {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--impact-text-color);
+    line-height: 1.9;
+  }
+
+  /* ================================
+     PC（min-width: 768px）
+     ================================ */
+  @media (min-width: 768px) {
+    .impact-section {
+      padding: 100px 0;
+    }
+
+    .impact-inner {
+      padding: 0 48px;
+    }
+
+    .impact-label {
+      font-size: 28px;
+      padding: 10px 36px;
+      margin-bottom: 28px;
+    }
+
+    .impact-headline {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .impact-lead {
+      font-size: 22px;
+    }
+  }
+</style>
+</head>
+<body>
+  <section class="impact-section">
+    <div class="impact-inner">
+      <div class="impact-label">デザイナーなら、在宅でできる！</div>
+      <h2 class="impact-headline">もっと自由に<br>生き生き働く人生を手に入れよう！</h2>
+      <p class="impact-lead">未経験からキャリアチェンジし<br>理想のライフスタイルに辿り着いた先輩がたくさん！</p>
+    </div>
+  </section>
+</body>
+</html>

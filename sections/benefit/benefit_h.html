@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .benefit-section {
+    padding: 72px 20px;
+    background: #1a1a1a;
+    font-family: -apple-system, 'Hiragino Sans', sans-serif;
+    color: #fff;
+  }
+
+  .benefit-heading {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .benefit-heading-en {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: #666;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .benefit-heading-ja {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.6;
+    color: #fff;
+  }
+
+  .benefit-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .benefit-card {
+    position: relative;
+    background: #252525;
+    border-radius: 12px;
+    padding: 36px 24px 24px;
+    overflow: hidden;
+  }
+
+  .benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 48px;
+    height: 48px;
+    border-left: 1px solid #444;
+    border-bottom: 1px solid #444;
+    border-radius: 0 0 0 12px;
+  }
+
+  .benefit-card-num {
+    position: absolute;
+    top: -8px;
+    left: 20px;
+    font-size: 56px;
+    font-weight: 800;
+    color: rgba(255,255,255,0.06);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .benefit-card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+  }
+
+  .benefit-card-body {
+    font-size: 13px;
+    color: #999;
+    line-height: 1.9;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── PC ── */
+  @media (min-width: 768px) {
+    .benefit-section { padding: 120px 40px; }
+    .benefit-heading { margin-bottom: 80px; }
+    .benefit-heading-en { font-size: 18px; }
+    .benefit-heading-ja { font-size: 36px; }
+
+    .benefit-grid {
+      gap: 28px;
+    }
+
+    .benefit-card { padding: 56px 40px 40px; border-radius: 20px; }
+
+    .benefit-card::before {
+      width: 72px;
+      height: 72px;
+    }
+
+    .benefit-card-num {
+      font-size: 88px;
+      top: -12px;
+      left: 32px;
+    }
+
+    .benefit-card-title { font-size: 28px; margin-bottom: 20px; }
+    .benefit-card-body { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+  <section class="benefit-section">
+    <div class="benefit-heading">
+      <p class="benefit-heading-en">Benefits</p>
+      <h2 class="benefit-heading-ja">選ばれる5つの理由</h2>
+    </div>
+
+    <div class="benefit-grid">
+      <div class="benefit-card">
+        <span class="benefit-card-num">01</span>
+        <h3 class="benefit-card-title">導入スピードの速さ</h3>
+        <p class="benefit-card-body">最短3日で運用開始。既存の業務フローを大きく変えることなく、スムーズに導入できます。</p>
+      </div>
+
+      <div class="benefit-card">
+        <span class="benefit-card-num">02</span>
+        <h3 class="benefit-card-title">直感的な操作性</h3>
+        <p class="benefit-card-body">専門知識不要。誰でもすぐに使い始められるシンプルなインターフェースを提供しています。</p>
+      </div>
+
+      <div class="benefit-card">
+        <span class="benefit-card-num">03</span>
+        <h3 class="benefit-card-title">万全のサポート体制</h3>
+        <p class="benefit-card-body">専任担当者が導入から運用まで一貫してサポート。問い合わせには最短30分以内に対応。</p>
+      </div>
+
+      <div class="benefit-card">
+        <span class="benefit-card-num">04</span>
+        <h3 class="benefit-card-title">柔軟なカスタマイズ</h3>
+        <p class="benefit-card-body">業種・規模に合わせた最適なプランを提案。必要な機能だけを選んで構築できます。</p>
+      </div>
+
+      <div class="benefit-card">
+        <span class="benefit-card-num">05</span>
+        <h3 class="benefit-card-title">確かな実績と信頼</h3>
+        <p class="benefit-card-body">導入企業500社以上、継続率98%の実績。業界をリードするソリューションです。</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

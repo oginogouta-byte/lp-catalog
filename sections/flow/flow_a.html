@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root {
+    /* テイスト適用時はここを変更 */
+    --flow-bg: #fff;
+    --flow-label-color: #666;
+    --flow-title-color: #222;
+    --flow-summary-color: #444;
+    --flow-circle-bg: #888;
+    --flow-circle-no-color: #ccc;
+    --flow-circle-text-color: #fff;
+    --flow-arrow-color: #666;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .flow-section {
+    background: var(--flow-bg);
+    font-family: -apple-system, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    padding: 56px 20px 56px;
+    text-align: center;
+  }
+
+  /* ── ラベル ── */
+  .flow-label {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--flow-label-color);
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+  }
+
+  /* ── タイトル ── */
+  .flow-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--flow-title-color);
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+
+  /* ── サマリー ── */
+  .flow-summary {
+    font-size: 14px;
+    color: var(--flow-summary-color);
+    line-height: 1.8;
+    margin-bottom: 36px;
+  }
+
+  /* ── ステップ群 ── */
+  .flow-steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  /* ── 1ステップ ── */
+  .flow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* ── 円 ── */
+  .flow-circle {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: var(--flow-circle-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .flow-circle-no {
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--flow-circle-no-color);
+    line-height: 1;
+  }
+
+  .flow-circle-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--flow-circle-text-color);
+    line-height: 1.4;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── 矢印（CSS三角） ── */
+  .flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  .flow-arrow::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 14px solid var(--flow-arrow-color);
+  }
+
+  /* ── PC（min-width: 768px） ── */
+  @media (min-width: 768px) {
+    .flow-section {
+      padding: 100px 40px 100px;
+    }
+
+    .flow-label {
+      font-size: 20px;
+      margin-bottom: 18px;
+    }
+
+    .flow-title {
+      font-size: 40px;
+      margin-bottom: 28px;
+    }
+
+    .flow-summary {
+      font-size: 20px;
+      margin-bottom: 56px;
+    }
+
+    .flow-circle {
+      width: 280px;
+      height: 280px;
+      gap: 10px;
+    }
+
+    .flow-circle-no {
+      font-size: 56px;
+    }
+
+    .flow-circle-text {
+      font-size: 28px;
+    }
+
+    .flow-arrow {
+      padding: 16px 0;
+    }
+
+    .flow-arrow::before {
+      border-left: 16px solid transparent;
+      border-right: 16px solid transparent;
+      border-top: 22px solid var(--flow-arrow-color);
+    }
+  }
+</style>
+</head>
+<body>
+  <section class="flow-section">
+
+    <!-- ラベル -->
+    <p class="flow-label">How to Use</p>
+
+    <!-- タイトル -->
+    <h2 class="flow-title">ご利用の流れ</h2>
+
+    <!-- サマリー -->
+    <p class="flow-summary">最短２営業日発行！<br>あなただけのビジネスカードをすぐお手元に。</p>
+
+    <!-- ステップ群 -->
+    <div class="flow-steps">
+
+      <!-- STEP 1 -->
+      <div class="flow-step">
+        <div class="flow-circle">
+          <span class="flow-circle-no">1</span>
+          <span class="flow-circle-text">お申込み</span>
+        </div>
+      </div>
+
+      <div class="flow-arrow"></div>
+
+      <!-- STEP 2 -->
+      <div class="flow-step">
+        <div class="flow-circle">
+          <span class="flow-circle-no">2</span>
+          <span class="flow-circle-text">カードを発行</span>
+        </div>
+      </div>
+
+      <div class="flow-arrow"></div>
+
+      <!-- STEP 3 -->
+      <div class="flow-step">
+        <div class="flow-circle">
+          <span class="flow-circle-no">3</span>
+          <span class="flow-circle-text">発行された<br>カード番号で<br>お買い物</span>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+</body>
+</html>

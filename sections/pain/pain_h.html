@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root {
+    /* テイスト適用時はここを変更 */
+    --pain-heading-color: #333;
+    --pain-heading-accent: #333;
+    --pain-text-color: #fff;
+    --pain-text-accent: #fff;
+    --pain-line-bg: rgba(0,0,0,0.65);
+    /* 写真フィルター — テイスト適用時はここを変更 */
+    --photo-filter: grayscale(80%) brightness(0.65) contrast(1.1);
+    --photo-overlay-color: rgba(80,80,80,0.35);
+    --photo-blend: multiply;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .pain-section {
+    font-family: -apple-system, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    color: #333;
+    overflow: hidden;
+  }
+
+  /* ── 見出し ── */
+  .pain-header {
+    text-align: center;
+    padding: 44px 20px 20px;
+    background: #f8f8f8;
+  }
+
+  .pain-header-check {
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+    color: #999;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+
+  .pain-header-title {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    color: var(--pain-heading-color);
+  }
+
+  .pain-header-title .accent {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--pain-heading-accent);
+  }
+
+  /* ── 悩みアイテム（全幅背景画像 + テキストオーバーレイ） ── */
+  .pain-item {
+    position: relative;
+    min-height: 160px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  /* 背景画像レイヤー（全幅） */
+  .pain-item-bg {
+    position: absolute;
+    inset: 0;
+    background: #aaa center / cover no-repeat;
+    filter: var(--photo-filter);
+  }
+
+  /* カラーオーバーレイ層 */
+  .pain-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--photo-overlay-color);
+    mix-blend-mode: var(--photo-blend);
+    pointer-events: none;
+  }
+
+  /* テキストオーバーレイ */
+  .pain-item-text {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 24px 16px;
+  }
+
+  /* 奇数: テキスト左寄せ */
+  .pain-item:nth-child(odd) .pain-item-text {
+    text-align: left;
+    padding-right: 30%;
+  }
+
+  /* 偶数: テキスト右寄せ */
+  .pain-item:nth-child(even) .pain-item-text {
+    text-align: right;
+    padding-left: 30%;
+  }
+
+  .pain-item-text p {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.9;
+    letter-spacing: 0.04em;
+    color: var(--pain-text-color);
+  }
+
+  /* 1行ずつ背景バンドで囲む */
+  .pain-item-text .line {
+    display: inline;
+    background: var(--pain-line-bg);
+    padding: 3px 10px;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  .pain-item-text .text-accent {
+    font-weight: 800;
+    color: var(--pain-text-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--pain-text-accent);
+  }
+
+  /* ── PC ── */
+  @media (min-width: 768px) {
+    .pain-header {
+      padding: 80px 40px 36px;
+    }
+
+    .pain-header-check {
+      font-size: 24px;
+    }
+
+    .pain-header-title {
+      font-size: 44px;
+    }
+
+    .pain-header-title .accent {
+      font-size: 56px;
+    }
+
+    .pain-item {
+      min-height: 280px;
+    }
+
+    .pain-item-text {
+      padding: 40px 32px;
+    }
+
+    .pain-item:nth-child(odd) .pain-item-text {
+      padding-right: 20%;
+    }
+
+    .pain-item:nth-child(even) .pain-item-text {
+      padding-left: 20%;
+    }
+
+    .pain-item-text p {
+      font-size: 26px;
+      line-height: 2.0;
+    }
+
+    .pain-item-text .line {
+      padding: 6px 18px;
+    }
+  }
+</style>
+</head>
+<body>
+  <section class="pain-section">
+
+    <!-- 見出し -->
+    <div class="pain-header">
+      <p class="pain-header-check">Check!</p>
+      <h2 class="pain-header-title">こんな<span class="accent">お悩み</span><br>ありませんか？</h2>
+    </div>
+
+    <!-- 悩みアイテム -->
+    <div class="pain-items">
+
+      <!-- 01: テキスト左 -->
+      <div class="pain-item">
+        <div class="pain-item-bg"></div>
+        <div class="pain-item-text">
+          <p><span class="line">うるおい不足の</span><br><span class="line"><span class="text-accent">カサカサ肌</span>が気になる</span></p>
+        </div>
+      </div>
+
+      <!-- 02: テキスト右 -->
+      <div class="pain-item">
+        <div class="pain-item-bg"></div>
+        <div class="pain-item-text">
+          <p><span class="line"><span class="text-accent">シワ、シミ</span>が</span><br><span class="line">年々増えている</span></p>
+        </div>
+      </div>
+
+      <!-- 03: テキスト左 -->
+      <div class="pain-item">
+        <div class="pain-item-bg"></div>
+        <div class="pain-item-text">
+          <p><span class="line">肌の<span class="text-accent">キメ</span>を</span><br><span class="line">整えたい</span></p>
+        </div>
+      </div>
+
+      <!-- 04: テキスト右 -->
+      <div class="pain-item">
+        <div class="pain-item-bg"></div>
+        <div class="pain-item-text">
+          <p><span class="line"><span class="text-accent">たるみ、ゆるみ</span>が進み</span><br><span class="line">老けてきた気がする</span></p>
+        </div>
+      </div>
+
+      <!-- 05: テキスト左 -->
+      <div class="pain-item">
+        <div class="pain-item-bg"></div>
+        <div class="pain-item-text">
+          <p><span class="line">スキンケアに</span><br><span class="line"><span class="text-accent">たくさんお金をかけている</span>のに</span><br><span class="line">効果が弱い</span></p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+</body>
+</html>

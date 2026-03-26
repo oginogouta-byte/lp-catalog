@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  .fv-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #111 0%, #222 50%, #111 100%);
+    position: relative;
+    padding: 40px 20px;
+  }
+  .fv-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+  }
+  .fv-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+  }
+  .fv-content h1 {
+    font-size: clamp(28px, 5vw, 52px);
+    color: #fff;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    font-family: -apple-system, sans-serif;
+  }
+  .fv-content p {
+    font-size: clamp(14px, 2vw, 18px);
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 36px;
+    line-height: 1.8;
+    font-family: -apple-system, sans-serif;
+  }
+  .fv-btn {
+    display: inline-block;
+    padding: 16px 48px;
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.2s;
+    font-family: -apple-system, sans-serif;
+  }
+  .fv-btn:hover { background: #222; }
+</style>
+</head>
+<body>
+  <section class="fv-hero">
+    <div class="fv-content">
+      <h1>あなたのビジネスを<br>次のステージへ加速する</h1>
+      <p>最先端のソリューションで、業務効率を最大化。<br>導入企業1,000社以上の実績が証明する確かな成果をお届けします。</p>
+      <a href="#" class="fv-btn">無料で始める</a>
+    </div>
+  </section>
+</body>
+</html>

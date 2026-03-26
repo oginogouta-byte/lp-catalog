@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root {
+    --intro-bg: #fff;
+    --intro-accent: #333;
+    --intro-text: #555;
+    --intro-label: #999;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .intro-section {
+    background: var(--intro-bg);
+    font-family: 'Georgia', 'Yu Mincho', serif;
+  }
+
+  .intro-label {
+    font-family: -apple-system, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: var(--intro-label);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .intro-title {
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--intro-accent);
+    letter-spacing: 0.15em;
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+
+  .intro-body {
+    font-family: -apple-system, sans-serif;
+    font-size: 14px;
+    color: var(--intro-text);
+    line-height: 2.2;
+    letter-spacing: 0.02em;
+  }
+
+  .intro-section {
+    padding: 64px 24px;
+  }
+
+  .intro-photo {
+    background: #d5d5d5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #999;
+    letter-spacing: 0.08em;
+    height: 200px;
+  }
+
+  .intro-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+
+  .intro-photo:first-child { height: 260px; grid-column: 1 / -1; }
+
+  .intro-title { font-size: 20px; }
+  .intro-body { font-size: 13px; }
+
+  /* ── PC ── */
+  @media (min-width: 768px) {
+    .intro-section {
+      padding: 100px 40px;
+    }
+
+    .intro-photos {
+      gap: 12px;
+      margin-bottom: 64px;
+    }
+
+    .intro-photo { height: 360px; }
+    .intro-photo:first-child { height: 480px; }
+
+    .intro-text {
+      padding: 0;
+    }
+
+    .intro-label { font-size: 18px; margin-bottom: 40px; }
+    .intro-title { font-size: 36px; margin-bottom: 48px; }
+    .intro-body { font-size: 24px; line-height: 2.4; }
+  }
+
+  @media (min-width: 1200px) {
+    .intro-title { font-size: 40px; }
+    .intro-body { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+  <section class="intro-section">
+    <div class="intro-photos">
+      <div class="intro-photo">メイン画像</div>
+      <div class="intro-photo">サブ画像 1</div>
+    </div>
+    <div class="intro-text">
+      <p class="intro-label">About</p>
+      <h2 class="intro-title">
+        あなたのビジネスに、<br>
+        新しい可能性を。
+      </h2>
+      <p class="intro-body">
+        私たちは、テクノロジーの力で企業の成長を支えるパートナーです。<br>
+        創業以来、一貫してお客様の課題に寄り添い、<br>
+        本質的な解決策を提供してまいりました。<br>
+        変化の時代だからこそ、確かな技術と信頼で、<br>
+        あなたのビジネスの未来を共に描きます。
+      </p>
+    </div>
+  </section>
+</body>
+</html>
