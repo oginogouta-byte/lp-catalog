@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  .benefit-section {
+    padding: 80px 20px;
+    background: #fff;
+    font-family: -apple-system, sans-serif;
+  }
+  .benefit-section h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111;
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .benefit-numbers {
+    max-width: 700px;
+    margin-inline: auto;
+  }
+  .benefit-num-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+  .benefit-num-item:last-child { margin-bottom: 0; }
+  .num {
+    font-size: 40px;
+    font-weight: 900;
+    color: #3b82f6;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 80px;
+  }
+  .num-text h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 8px;
+  }
+  .num-text p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.7;
+  }
+  @media (min-width: 768px) {
+    .benefit-section { padding: 120px 40px; }
+    .benefit-section h2 { font-size: 44px; margin-bottom: 80px; }
+    .benefit-num-item { gap: 20px; margin-bottom: 72px; }
+    .num { font-size: 64px; width: 120px; }
+    .num-text h3 { font-size: 32px; margin-bottom: 14px; }
+    .num-text p { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+  <section class="benefit-section">
+    <h2>数字で見る導入効果</h2>
+    <div class="benefit-numbers">
+      <div class="benefit-num-item">
+        <div class="num">01</div>
+        <div class="num-text">
+          <h3>作業時間 平均62%削減</h3>
+          <p>導入企業の平均値。手動作業の自動化により、大幅な工数削減を実現しています。</p>
+        </div>
+      </div>
+      <div class="benefit-num-item">
+        <div class="num">02</div>
+        <div class="num-text">
+          <h3>顧客満足度 98.5%</h3>
+          <p>継続的なアップデートとサポート体制により、高い満足度を維持しています。</p>
+        </div>
+      </div>
+      <div class="benefit-num-item">
+        <div class="num">03</div>
+        <div class="num-text">
+          <h3>ROI 平均340%達成</h3>
+          <p>投資対効果は平均340%。導入コストを大きく上回るリターンをお約束します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "section_type": "benefit",
+  "section_label": "ベネフィット",
+  "variants": [
+    { "id": "benefit_a", "name": "Benefit_A", "file": "benefit_a.html", "description": "カードグリッド型 — SVGアイコン+タイトル+説明、3〜6項目対応" },
+    { "id": "benefit_b", "name": "Benefit_B", "file": "benefit_b.html", "description": "左右交互型 — 画像差し込み可、長文説明向き" },
+    { "id": "benefit_c", "name": "Benefit_C", "file": "benefit_c.html", "description": "数字強調リスト型 — 統計・実績数値の訴求に最適" },
+    { "id": "benefit_d", "name": "Benefit_D", "file": "benefit_d.html", "description": "横スクロール型 — カード+画像を横スワイプ、項目数自由" },
+    { "id": "benefit_e", "name": "Benefit_E", "file": "benefit_e.html", "description": "フルワイド交互ブロック型 — 明暗切替の全幅レイアウト、スクロールにリズムを出す" },
+    { "id": "benefit_f", "name": "Benefit_F", "file": "benefit_f.html", "description": "ポイント連続型 — 左右反転なし、Point番号+タイトル+写真+説明を縦に連続配置" },
+    { "id": "benefit_g", "name": "Benefit_G", "file": "benefit_g.html", "description": "3カラム特徴型 — 画像上+番号被り+マーカー下線タイトル、SP縦積み" },
+    { "id": "benefit_h", "name": "Benefit_H", "file": "benefit_h.html", "description": "ダーク特典カード型 — 3+2グリッド、番号飛び出し+コーナー装飾+ダーク背景タイトル" },
+    { "id": "benefit_i", "name": "Benefit_I", "file": "benefit_i.html", "description": "画像+箇条書き型 — 左に画像・右にピル型番号リスト、SP縦積み" }
+  ]
+}

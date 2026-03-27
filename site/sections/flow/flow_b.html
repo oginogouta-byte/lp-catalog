@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flow_B — 導入までの流れ（縦リスト5ステップ型）</title>
+  <style>
+    /* ── リセット ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: sans-serif; background: #fff; color: #111; line-height: 1.6; }
+
+    /* ── セクション全体 ── */
+    .flow-section {
+      padding: 64px 16px;
+      background: #fff;
+    }
+
+    /* ── 内容幅 ── */
+    .flow-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* ── 見出し ── */
+    .flow-heading {
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 48px;
+      letter-spacing: .04em;
+    }
+
+    /* ── ステップリスト ── */
+    .flow-list {
+      list-style: none;
+    }
+
+    /* ── ステップ行 ── */
+    .flow-item {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 20px 0;
+      position: relative;
+    }
+
+    /* 行間の矢印（最後の要素を除く） */
+    .flow-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 38px; /* アイコン中心 */
+      bottom: -18px;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 18px solid #999;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+
+    /* 区切り線 */
+    .flow-item:not(:last-child) {
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 16px;
+    }
+
+    /* ── ステップアイコン（番号円） ── */
+    .flow-step {
+      flex: 0 0 76px;
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      border: 2px solid #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+    }
+
+    .flow-step__label {
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #555;
+    }
+
+    .flow-step__num {
+      font-size: 1.3rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    /* ── テキスト部 ── */
+    .flow-content {
+      flex: 1;
+      padding-top: 4px;
+    }
+
+    .flow-content__title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .flow-content__body {
+      font-size: 0.875rem;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    /* ── レスポンシブ (768px以上) ── */
+    @media (min-width: 768px) {
+      .flow-heading { font-size: 2rem; }
+
+      .flow-item { gap: 28px; padding: 24px 0; }
+
+      .flow-step {
+        flex: 0 0 88px;
+        width: 88px;
+        height: 88px;
+      }
+      .flow-step__label { font-size: 0.6rem; }
+      .flow-step__num { font-size: 1.5rem; }
+
+      .flow-item:not(:last-child)::after {
+        left: 44px;
+        bottom: -20px;
+        border-left-width: 12px;
+        border-right-width: 12px;
+        border-top-width: 20px;
+      }
+
+      .flow-content__title { font-size: 1.1rem; }
+      .flow-content__body  { font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="flow-section">
+  <div class="flow-inner">
+
+    <h2 class="flow-heading">導入までの流れ</h2>
+
+    <ul class="flow-list">
+
+      <li class="flow-item">
+        <div class="flow-step">
+          <span class="flow-step__label">STEP</span>
+          <span class="flow-step__num">01</span>
+        </div>
+        <div class="flow-content">
+          <h3 class="flow-content__title">プラン確認・お申込み</h3>
+          <p class="flow-content__body">弊社営業担当が現状やお悩みをお伺いし、貴社にあったプランをご提案いたします。</p>
+        </div>
+      </li>
+
+      <li class="flow-item">
+        <div class="flow-step">
+          <span class="flow-step__label">STEP</span>
+          <span class="flow-step__num">02</span>
+        </div>
+        <div class="flow-content">
+          <h3 class="flow-content__title">スケジュール等のご確認</h3>
+          <p class="flow-content__body">ご利用開始までの具体的な流れをご確認いただいた後、システムや採用ホームページの構築に必要な情報をご提供いただきます。（弊社営業担当がご案内します。）</p>
+        </div>
+      </li>
+
+      <li class="flow-item">
+        <div class="flow-step">
+          <span class="flow-step__label">STEP</span>
+          <span class="flow-step__num">03</span>
+        </div>
+        <div class="flow-content">
+          <h3 class="flow-content__title">基本情報のご提供</h3>
+          <p class="flow-content__body">必要なご連絡先・ご担当者情報を専用シートにご記入いただきます。その内容をもとに管理画面のアカウントを発行いたします。</p>
+        </div>
+      </li>
+
+      <li class="flow-item">
+        <div class="flow-step">
+          <span class="flow-step__label">STEP</span>
+          <span class="flow-step__num">04</span>
+        </div>
+        <div class="flow-content">
+          <h3 class="flow-content__title">デザイン・求人原稿ご確認</h3>
+          <p class="flow-content__body">お伺いした情報をもとに弊社で作成した採用ホームページデザインや求人原稿の内容をご確認いただきます。</p>
+        </div>
+      </li>
+
+      <li class="flow-item">
+        <div class="flow-step">
+          <span class="flow-step__label">STEP</span>
+          <span class="flow-step__num">05</span>
+        </div>
+        <div class="flow-content">
+          <h3 class="flow-content__title">ご利用開始</h3>
+          <p class="flow-content__body">全ての準備、ご確認が完了いたしましたらご利用を開始いただけます。</p>
+        </div>
+      </li>
+
+    </ul>
+
+  </div>
+</section>
+
+</body>
+</html>

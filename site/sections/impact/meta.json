@@ -1,0 +1,8 @@
+{
+  "section_type": "impact",
+  "section_label": "インパクト訴求",
+  "variants": [
+    { "id": "impact_a", "name": "Impact_A", "file": "impact_a.html", "description": "縦書きキーワード+写真型 — ダーク背景に大きな縦書きテキスト+1枚画像、LP転換ポイント向き" },
+    { "id": "impact_b", "name": "Impact_B", "file": "impact_b.html", "description": "ラベル+見出し+リード型 — 背景色+中央揃えテキスト、セクション転換・回答提示向き" }
+  ]
+}

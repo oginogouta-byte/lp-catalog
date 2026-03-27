@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root {
+    --intro-bg: #fff;
+    --intro-accent: #222;
+    --intro-text: #555;
+    --intro-border: #e0e0e0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .intro-section {
+    background: var(--intro-bg);
+    font-family: -apple-system, 'Hiragino Sans', sans-serif;
+  }
+
+  .intro-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--intro-accent);
+    border-bottom: 2px solid var(--intro-accent);
+    padding-bottom: 4px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+
+  .intro-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--intro-accent);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .intro-body {
+    font-size: 14px;
+    color: var(--intro-text);
+    line-height: 2;
+    letter-spacing: 0.02em;
+  }
+
+  .intro-photo {
+    background: #d5d5d5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #999;
+    letter-spacing: 0.08em;
+    width: 100%;
+    height: 280px;
+  }
+
+  .intro-text {
+    padding: 40px 24px 64px;
+  }
+
+  .intro-title { font-size: 20px; }
+  .intro-body { font-size: 13px; }
+
+  /* ── PC ── */
+  @media (min-width: 768px) {
+    .intro-photo {
+      height: 480px;
+    }
+
+    .intro-text {
+      padding: 64px 40px 100px;
+    }
+
+    .intro-label { font-size: 18px; margin-bottom: 40px; }
+    .intro-title { font-size: 36px; margin-bottom: 40px; }
+    .intro-body { font-size: 24px; line-height: 2.2; }
+  }
+
+  @media (min-width: 1200px) {
+    .intro-title { font-size: 40px; }
+    .intro-body { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+  <section class="intro-section">
+    <div class="intro-photo">サービスイメージ画像</div>
+    <div class="intro-text">
+      <span class="intro-label">Service</span>
+      <h2 class="intro-title">
+        テクノロジーで、<br>
+        働き方を変える。
+      </h2>
+      <p class="intro-body">
+        私たちのサービスは、複雑な業務プロセスをシンプルにし、
+        チームの生産性を最大化します。導入から運用まで一貫して
+        サポートし、お客様のビジネスの成長を加速させます。<br><br>
+        直感的なインターフェースと高いカスタマイズ性で、
+        あらゆる規模の企業に最適なソリューションを提供します。
+      </p>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  .faq-section {
+    padding: 80px 20px;
+    background: #f9fafb;
+    font-family: -apple-system, sans-serif;
+  }
+  .faq-section h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .faq-grid { max-width: 800px; margin-inline: auto; }
+  .faq-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 28px 24px;
+    border-radius: 8px;
+  }
+  .faq-row:nth-child(odd) { background: #fff; }
+  .faq-row .q {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.5;
+  }
+  .faq-row .q::before { content: 'Q. '; color: #3b82f6; }
+  .faq-row .a {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.7;
+  }
+  .faq-row .a::before { content: 'A. '; color: #22c55e; font-weight: 700; }
+  @media (min-width: 768px) {
+    .faq-section {
+      padding: 140px 40px;
+    }
+    .faq-section h2 {
+      font-size: 48px;
+      margin-bottom: 72px;
+    }
+    .faq-grid {
+      max-width: 1000px;
+    }
+    .faq-row {
+      gap: 20px;
+      padding: 40px 36px;
+      border-radius: 12px;
+    }
+    .faq-row .q {
+      font-size: 20px;
+    }
+    .faq-row .a {
+      font-size: 18px;
+    }
+  }
+</style>
+</head>
+<body>
+  <section class="faq-section">
+    <h2>よくある質問</h2>
+    <div class="faq-grid">
+      <div class="faq-row">
+        <div class="q">最低契約期間はありますか？</div>
+        <div class="a">月次プランの場合、最低契約期間はありません。年次プランは1年間の契約となります。</div>
+      </div>
+      <div class="faq-row">
+        <div class="q">データの移行はサポートしてもらえますか？</div>
+        <div class="a">はい、専任チームがデータ移行をサポートいたします。CSV・Excel等からのインポートに対応しています。</div>
+      </div>
+      <div class="faq-row">
+        <div class="q">スマートフォンからも利用できますか？</div>
+        <div class="a">はい、iOS/Androidアプリをご用意しています。外出先からもすべての機能をご利用いただけます。</div>
+      </div>
+      <div class="faq-row">
+        <div class="q">カスタマイズは可能ですか？</div>
+        <div class="a">スタンダードプラン以上でワークフローのカスタマイズが可能です。プレミアムプランでは専用機能の開発も承ります。</div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

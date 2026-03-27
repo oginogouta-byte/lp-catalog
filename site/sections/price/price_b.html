@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Price_B — 料金比較テーブル型</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: sans-serif; background: #fff; color: #111; }
+
+    .price-section { padding: 64px 20px; background: #f8f8f8; }
+
+    .price-inner { max-width: 800px; margin: 0 auto; }
+
+    .price-heading {
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 48px;
+      letter-spacing: .04em;
+    }
+
+    /* テーブルラッパー（SP横スクロール） */
+    .price-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .price-table {
+      width: 100%;
+      min-width: 560px;
+      border-collapse: collapse;
+    }
+
+    /* ヘッダー行 */
+    .price-table thead tr th {
+      padding: 20px 16px;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+      border-bottom: 2px solid #111;
+    }
+
+    .price-table thead tr th:first-child {
+      text-align: left;
+      width: 36%;
+    }
+
+    /* おすすめ列 */
+    .price-table thead tr th.col-recommended {
+      background: #111;
+      color: #fff;
+    }
+
+    /* 価格サブ行 */
+    .price-table .price-row th {
+      text-align: left;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: #555;
+      padding: 8px 16px 20px;
+      border-bottom: 2px solid #111;
+    }
+
+    .price-table .price-row td {
+      text-align: center;
+      padding: 8px 16px 20px;
+      border-bottom: 2px solid #111;
+    }
+
+    .price-table .price-row td.col-recommended {
+      background: #111;
+      color: #fff;
+    }
+
+    .price-amount {
+      font-size: 1.6rem;
+      font-weight: 700;
+      display: block;
+    }
+
+    .price-unit {
+      font-size: 0.75rem;
+      color: #555;
+    }
+
+    .col-recommended .price-unit { color: #aaa; }
+
+    /* 機能行 */
+    .price-table tbody tr td,
+    .price-table tbody tr th {
+      padding: 14px 16px;
+      border-bottom: 1px solid #ddd;
+      font-size: 0.875rem;
+    }
+
+    .price-table tbody tr th {
+      text-align: left;
+      font-weight: 400;
+    }
+
+    .price-table tbody tr td {
+      text-align: center;
+    }
+
+    .price-table tbody tr td.col-recommended {
+      background: #f5f5f5;
+      font-weight: 700;
+    }
+
+    /* ✓ / — 表示 */
+    .check { font-size: 1rem; font-weight: 700; }
+    .dash  { color: #bbb; }
+
+    /* CTAボタン行 */
+    .price-table tfoot tr td {
+      padding: 20px 16px;
+      text-align: center;
+    }
+
+    .price-table tfoot .col-recommended { background: #f5f5f5; }
+
+    .price-btn {
+      display: inline-block;
+      border: 2px solid #111;
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: #111;
+      white-space: nowrap;
+    }
+
+    .price-btn--fill {
+      background: #111;
+      color: #fff;
+    }
+
+    @media (min-width: 768px) {
+      .price-heading { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="price-section">
+  <div class="price-inner">
+    <h2 class="price-heading">料金比較</h2>
+
+    <div class="price-table-wrap">
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>LIGHT</th>
+            <th class="col-recommended">STANDARD</th>
+            <th>ENTERPRISE</th>
+          </tr>
+          <tr class="price-row">
+            <th>月額料金</th>
+            <td>
+              <span class="price-amount">¥9,800</span>
+              <span class="price-unit">/ 月（税抜）</span>
+            </td>
+            <td class="col-recommended">
+              <span class="price-amount">¥29,800</span>
+              <span class="price-unit">/ 月（税抜）</span>
+            </td>
+            <td>
+              <span class="price-amount" style="font-size:1rem;">お問い合わせ</span>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>機能A</th>
+            <td><span class="check">✓</span></td>
+            <td class="col-recommended"><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <th>機能B</th>
+            <td><span class="dash">—</span></td>
+            <td class="col-recommended"><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <th>機能C</th>
+            <td><span class="dash">—</span></td>
+            <td class="col-recommended"><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <th>月間利用件数</th>
+            <td>100件まで</td>
+            <td class="col-recommended">1,000件まで</td>
+            <td>無制限</td>
+          </tr>
+          <tr>
+            <th>サポート</th>
+            <td>メール</td>
+            <td class="col-recommended">チャット＋電話</td>
+            <td>専任担当</td>
+          </tr>
+          <tr>
+            <th>API連携</th>
+            <td><span class="dash">—</span></td>
+            <td class="col-recommended">3件まで</td>
+            <td>無制限</td>
+          </tr>
+          <tr>
+            <th>カスタム開発</th>
+            <td><span class="dash">—</span></td>
+            <td class="col-recommended"><span class="dash">—</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td><a class="price-btn" href="#">始める</a></td>
+            <td class="col-recommended"><a class="price-btn price-btn--fill" href="#">始める</a></td>
+            <td><a class="price-btn" href="#">問い合わせ</a></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

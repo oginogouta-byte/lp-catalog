@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .benefit-section {
+    padding: 80px 0;
+    background: #fff;
+    font-family: -apple-system, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    color: #000;
+  }
+
+  /* ── セクション見出し ── */
+  .benefit-heading-area {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .benefit-heading-en {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: #888;
+    margin-bottom: 10px;
+  }
+
+  .benefit-heading-ja {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #000;
+  }
+
+  /* ── 2カラム ── */
+  .benefit-columns {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 32px;
+  }
+
+  /* 左: 画像プレースホルダー */
+  .benefit-col-image {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .benefit-image-placeholder {
+    width: 100%;
+    aspect-ratio: 260 / 170;
+    background: #d5d5d5;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .benefit-image-placeholder span {
+    font-size: 12px;
+    color: rgba(0,0,0,0.2);
+    font-weight: 600;
+  }
+
+  /* 右: リスト */
+  .benefit-col-list {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  /* ── リストアイテム（ピル型） ── */
+  .benefit-list-item {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    border: 2px solid #999;
+    border-radius: 60px;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  /* 番号（円形） */
+  .benefit-list-no {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ccc;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: 700;
+    color: #666;
+    line-height: 1;
+    margin-left: -2px;
+  }
+
+  /* ラベル */
+  .benefit-list-label {
+    flex: 1;
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    letter-spacing: 0.04em;
+    padding: 0 12px;
+    line-height: 1.5;
+  }
+
+  /* ================================
+     PC（min-width: 768px）
+     ================================ */
+  @media (min-width: 768px) {
+    .benefit-section {
+      padding: 140px 0;
+    }
+
+    .benefit-heading-area {
+      margin-bottom: 72px;
+    }
+
+    .benefit-heading-en {
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+
+    .benefit-heading-ja {
+      font-size: 40px;
+    }
+
+    .benefit-columns {
+      gap: 48px;
+      padding: 0 40px;
+    }
+
+    .benefit-col-image {
+      max-width: 460px;
+    }
+
+    .benefit-col-list {
+      gap: 28px;
+    }
+
+    .benefit-list-item {
+      height: 100px;
+      border-radius: 100px;
+      border-width: 3px;
+    }
+
+    .benefit-list-no {
+      width: 100px;
+      height: 100px;
+      font-size: 40px;
+    }
+
+    .benefit-list-label {
+      font-size: 28px;
+      padding: 0 20px;
+    }
+  }
+</style>
+</head>
+<body>
+  <section class="benefit-section">
+
+    <!-- セクション見出し -->
+    <div class="benefit-heading-area">
+      <p class="benefit-heading-en">Point</p>
+      <h2 class="benefit-heading-ja">ビジネスの可能性を広げる<br>4つのポイント</h2>
+    </div>
+
+    <!-- 2カラム -->
+    <div class="benefit-columns">
+
+      <!-- 左: 画像 -->
+      <div class="benefit-col-image">
+        <div class="benefit-image-placeholder">
+          <span>IMAGE</span>
+        </div>
+      </div>
+
+      <!-- 右: リスト -->
+      <div class="benefit-col-list">
+
+        <div class="benefit-list-item">
+          <div class="benefit-list-no">1</div>
+          <p class="benefit-list-label">売上金を翌日使える</p>
+        </div>
+
+        <div class="benefit-list-item">
+          <div class="benefit-list-no">2</div>
+          <p class="benefit-list-label">売れるほど増える<br>ご利用可能枠</p>
+        </div>
+
+        <div class="benefit-list-item">
+          <div class="benefit-list-no">3</div>
+          <p class="benefit-list-label">ご利用金額に応じた<br>キャッシュバック</p>
+        </div>
+
+        <div class="benefit-list-item">
+          <div class="benefit-list-no">4</div>
+          <p class="benefit-list-label">年会費無料</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</body>
+</html>

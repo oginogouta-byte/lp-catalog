@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root {
+    --pain-bg: #f5f5f5;
+    --pain-accent: #222;
+    --pain-text: #555;
+    --pain-img-bg: #d5d5d5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .pain-section {
+    padding: 64px 24px;
+    background: var(--pain-bg);
+    font-family: -apple-system, 'Hiragino Sans', sans-serif;
+  }
+
+  .pain-section h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--pain-accent);
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .pain-items {
+    max-width: 800px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .pain-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .pain-item:nth-child(even) {
+    flex-direction: column;
+  }
+
+  .pain-item-img {
+    flex-shrink: 0;
+    width: 100%;
+    height: 200px;
+    background: var(--pain-img-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #999;
+    letter-spacing: 0.08em;
+    border-radius: 8px;
+  }
+
+  .pain-item-num {
+    font-size: 36px;
+    font-weight: 800;
+    color: #ddd;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .pain-item-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--pain-accent);
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+
+  .pain-item-body {
+    font-size: 13px;
+    color: var(--pain-text);
+    line-height: 1.9;
+  }
+
+  /* ── PC ── */
+  @media (min-width: 768px) {
+    .pain-section { padding: 120px 40px; }
+    .pain-section h2 { font-size: 40px; margin-bottom: 72px; }
+
+    .pain-items { gap: 80px; }
+
+    .pain-item { gap: 36px; }
+
+    .pain-item-img {
+      width: 100%;
+      height: 360px;
+    }
+
+    .pain-item-num { font-size: 64px; margin-bottom: 20px; }
+    .pain-item-title { font-size: 28px; margin-bottom: 20px; }
+    .pain-item-body { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+  <section class="pain-section">
+    <h2>このような課題はありませんか？</h2>
+    <div class="pain-items">
+      <div class="pain-item">
+        <div class="pain-item-img">イメージ画像 1</div>
+        <div class="pain-item-text">
+          <div class="pain-item-num">01</div>
+          <h3 class="pain-item-title">情報が散在して全体像が掴めない</h3>
+          <p class="pain-item-body">
+            複数のツールやシートにデータが分散し、正確な現状把握に毎回大きな労力がかかっている。
+            意思決定に必要な情報を集めるだけで、本来の業務時間が圧迫されてしまう。
+          </p>
+        </div>
+      </div>
+
+      <div class="pain-item">
+        <div class="pain-item-img">イメージ画像 2</div>
+        <div class="pain-item-text">
+          <div class="pain-item-num">02</div>
+          <h3 class="pain-item-title">属人化で組織がスケールしない</h3>
+          <p class="pain-item-body">
+            特定のメンバーに業務知識が集中し、担当者不在時に業務が滞る。
+            ナレッジの共有や引き継ぎに課題を感じながらも、根本的な解決に手をつけられていない。
+          </p>
+        </div>
+      </div>
+
+      <div class="pain-item">
+        <div class="pain-item-img">イメージ画像 3</div>
+        <div class="pain-item-text">
+          <div class="pain-item-num">03</div>
+          <h3 class="pain-item-title">ツール導入しても定着しない</h3>
+          <p class="pain-item-body">
+            新しいシステムやツールを導入しても、現場のフローに馴染まず使われなくなる。
+            投資対効果が見えず、次の一手を打てずにいる。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

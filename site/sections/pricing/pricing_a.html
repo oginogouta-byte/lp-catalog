@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  .pricing-section {
+    padding: 80px 20px;
+    background: #fff;
+    font-family: -apple-system, sans-serif;
+  }
+  .pricing-section h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .pricing-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 36px 28px;
+    text-align: center;
+  }
+  .pricing-card.featured {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px #3b82f6;
+    position: relative;
+  }
+  .pricing-card.featured::before {
+    content: '人気';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #3b82f6;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 16px;
+    border-radius: 12px;
+  }
+  .pricing-card .plan-name { font-size: 16px; font-weight: 600; color: #888; margin-bottom: 12px; }
+  .pricing-card .price { font-size: 40px; font-weight: 800; color: #111; margin-bottom: 4px; }
+  .pricing-card .price span { font-size: 16px; font-weight: 400; color: #888; }
+  .pricing-card .period { font-size: 13px; color: #aaa; margin-bottom: 24px; }
+  .pricing-card ul { list-style: none; text-align: left; margin-bottom: 28px; }
+  .pricing-card ul li {
+    font-size: 14px;
+    color: #555;
+    padding: 8px 0;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .pricing-card ul li::before { content: '✓ '; color: #22c55e; font-weight: 700; }
+  .pricing-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #3b82f6;
+    background: transparent;
+    color: #3b82f6;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .pricing-card.featured .pricing-btn {
+    background: #3b82f6;
+    color: #fff;
+  }
+  .pricing-btn:hover { background: #3b82f6; color: #fff; }
+  @media (min-width: 768px) {
+    .pricing-section { padding: 140px 40px; }
+    .pricing-section h2 { font-size: 48px; margin-bottom: 72px; }
+    .pricing-grid { gap: 40px; max-width: 600px; }
+    .pricing-card { padding: 56px 40px; }
+    .pricing-card .plan-name { font-size: 26px; margin-bottom: 18px; }
+    .pricing-card .price { font-size: 64px; margin-bottom: 8px; }
+    .pricing-card .price span { font-size: 26px; }
+    .pricing-card .period { font-size: 22px; margin-bottom: 36px; }
+    .pricing-card ul li { font-size: 24px; padding: 12px 0; }
+    .pricing-card ul { margin-bottom: 40px; }
+    .pricing-btn { padding: 18px; font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+  <section class="pricing-section">
+    <h2>料金プラン</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="plan-name">ライト</div>
+        <div class="price">¥9,800<span>/月</span></div>
+        <div class="period">年払いで20%OFF</div>
+        <ul>
+          <li>ユーザー数 5名まで</li>
+          <li>基本機能すべて</li>
+          <li>メールサポート</li>
+          <li>データ容量 10GB</li>
+        </ul>
+        <button class="pricing-btn">このプランを選択</button>
+      </div>
+      <div class="pricing-card featured">
+        <div class="plan-name">スタンダード</div>
+        <div class="price">¥29,800<span>/月</span></div>
+        <div class="period">年払いで20%OFF</div>
+        <ul>
+          <li>ユーザー数 20名まで</li>
+          <li>全機能利用可能</li>
+          <li>チャット・電話サポート</li>
+          <li>データ容量 100GB</li>
+          <li>API連携</li>
+        </ul>
+        <button class="pricing-btn">このプランを選択</button>
+      </div>
+      <div class="pricing-card">
+        <div class="plan-name">プレミアム</div>
+        <div class="price">¥98,000<span>/月</span></div>
+        <div class="period">年払いで20%OFF</div>
+        <ul>
+          <li>ユーザー数 無制限</li>
+          <li>全機能＋カスタム開発</li>
+          <li>専任サポート</li>
+          <li>データ容量 無制限</li>
+          <li>SLA保証</li>
+        </ul>
+        <button class="pricing-btn">お問い合わせ</button>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

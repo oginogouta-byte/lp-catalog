@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--
+  Section Parts Catalog: Intro_E — 配置先 catalog/sections/intro/intro_e.html（元: crawl/traces/OopsWOMB_intro.html）
+  トレース元: https://oops-jp.com/womb/
+  対象: .visual-concept セクション（「もーう！子宮ってやつは。」〜「ちょっぴりピースを。」）
+  セクション種別: intro（ブランドコンセプト）
+  SPビューポート: 390×844 / PCビューポート: 820×1180
+  背景: フルブリード（元はオレンジ系） → モノクロトレースではグレー
+  コンテンツ列: max-width 800px 中央寄せ（プロジェクト定義に準拠）
+  構造:
+    - H2: SVG画像タイトル「もーう！子宮ってやつは。」→ テキスト化
+    - 本文: 6段落（白テキスト、letter-spacing広め）
+    - 最終段落: フォントサイズ大
+    - PC/SP同一レイアウト（1カラム左寄せ）。PCではフォントサイズのみ拡大。
+    - 元サイトPC版の左イラスト+右テキスト2カラムはトレースしない（SP構造に統一）
+    - 下部: 「LOVE AND PEACE WITH」ロゴは対象外（省略）
+-->
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --lp-max-width: 800px;
+    --bp-md: 768px;
+  }
+
+  .intro-section {
+    position: relative;
+    background: #888;
+    font-family: -apple-system, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    color: #fff;
+    overflow: hidden;
+    padding: 48px 0 56px;
+  }
+
+  /* 背景は100% / 本文・ロゴは最大800pxで中央 */
+  .intro-shell {
+    width: 100%;
+    max-width: var(--lp-max-width);
+    margin-inline: auto;
+    padding-inline: 16px;
+  }
+
+  /* ── タイトル ── */
+  .intro-title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0.06em;
+    color: #fff;
+    margin-bottom: 48px;
+  }
+
+  /* ── 本文段落 ── */
+  .intro-txt {
+    font-size: 14.5px;
+    font-weight: 400;
+    line-height: 2.4;
+    letter-spacing: 0.28em;
+    color: #fff;
+  }
+
+  .intro-txt + .intro-txt {
+    margin-top: 19px;
+  }
+
+  /* ── 最終段落（大きめ） ── */
+  .intro-txt-last {
+    font-size: 21px;
+    line-height: 2.0;
+    letter-spacing: 0.28em;
+    margin-top: 19px;
+  }
+
+
+  /* ================================
+     PC（min-width: 768px）
+     ================================ */
+  @media (min-width: 768px) {
+    .intro-section {
+      padding: 84px 0 100px;
+    }
+
+    .intro-shell {
+      padding-inline: 24px;
+    }
+
+    .intro-title {
+      font-size: 50px;
+      margin-bottom: 56px;
+    }
+
+    .intro-txt {
+      font-size: 26px;
+      line-height: 2.4;
+    }
+
+    .intro-txt + .intro-txt {
+      margin-top: 34px;
+    }
+
+    .intro-txt-last {
+      font-size: 38px;
+      margin-top: 34px;
+    }
+
+  }
+</style>
+</head>
+<body>
+  <section class="intro-section">
+
+    <div class="intro-shell">
+
+    <!-- テキストエリア -->
+    <div class="intro-inner">
+      <h2 class="intro-title">も———う！<br>子宮ってやつは。</h2>
+
+      <p class="intro-txt">
+        あぁ、おなか痛い。<br>
+        なんか自分じゃないみたい。<br>
+        おりものの様子、いつもと違う？<br>
+        この前のセックス、もしかして...
+      </p>
+
+      <p class="intro-txt">
+        体も、やる気も、<br>
+        服も、予定も、メンタルも、<br>
+        私たちの毎日は、けっこう、<br>
+        子宮に振り回されている。
+      </p>
+
+      <p class="intro-txt">
+        いつものことだから、<br>
+        慣れちゃっているけど。<br>
+        いつものことだからこそ、<br>
+        もっとうまく付き合っていかない？
+      </p>
+
+      <p class="intro-txt">
+        たとえば、オンラインで<br>
+        いつでも相談できるピル処方。<br>
+        毎日でも着けたくなる<br>
+        肌に気持ちいいおりものシート。
+      </p>
+
+      <p class="intro-txt">
+        しっかり頼れて、<br>
+        少しでもピースになれる。<br>
+        そんなチョイスを、増やしていこう。
+      </p>
+
+      <p class="intro-txt intro-txt-last">
+        子宮との365日に、<br>
+        ちょっぴりピースを。
+      </p>
+    </div>
+
+
+    </div>
+
+  </section>
+</body>
+</html>

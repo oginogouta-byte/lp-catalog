@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Price_A — 料金プランカード横並び型</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: sans-serif; background: #fff; color: #111; }
+
+    .price-section { padding: 64px 20px; background: #fff; }
+
+    .price-inner { max-width: 800px; margin: 0 auto; }
+
+    .price-heading {
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 8px;
+      letter-spacing: .04em;
+    }
+
+    .price-subheading {
+      font-size: 0.875rem;
+      text-align: center;
+      color: #555;
+      margin-bottom: 48px;
+    }
+
+    /* SP: 縦積み */
+    .price-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .price-card {
+      border: 2px solid #111;
+      border-radius: 12px;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .price-card--recommended {
+      background: #111;
+      color: #fff;
+    }
+
+    .price-card__badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      background: #fff;
+      color: #111;
+      border-radius: 30px;
+      padding: 3px 12px;
+      display: inline-block;
+      width: fit-content;
+    }
+
+    .price-card--recommended .price-card__badge {
+      background: #fff;
+      color: #111;
+    }
+
+    .price-card__plan {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #555;
+    }
+
+    .price-card--recommended .price-card__plan { color: #ccc; }
+
+    .price-card__price {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .price-card__currency {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .price-card__amount {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -.02em;
+    }
+
+    .price-card__unit {
+      font-size: 0.85rem;
+      color: #555;
+    }
+
+    .price-card--recommended .price-card__unit { color: #ccc; }
+
+    .price-card__divider {
+      border: none;
+      border-top: 1px solid #ddd;
+    }
+
+    .price-card--recommended .price-card__divider { border-color: #444; }
+
+    .price-card__features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .price-card__features li {
+      font-size: 0.875rem;
+      line-height: 1.5;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .price-card__features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      font-weight: 700;
+    }
+
+    .price-card__cta {
+      display: block;
+      text-align: center;
+      border: 2px solid #111;
+      border-radius: 6px;
+      padding: 12px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-decoration: none;
+      color: #111;
+      margin-top: auto;
+    }
+
+    .price-card--recommended .price-card__cta {
+      background: #fff;
+      color: #111;
+      border-color: #fff;
+    }
+
+    /* PC: 横並び3列 */
+    @media (min-width: 768px) {
+      .price-cards {
+        flex-direction: row;
+        align-items: stretch;
+      }
+
+      .price-card { flex: 1; }
+
+      .price-heading { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="price-section">
+  <div class="price-inner">
+    <h2 class="price-heading">料金プラン</h2>
+    <p class="price-subheading">すべてのプランに14日間の無料トライアルが含まれます</p>
+
+    <div class="price-cards">
+
+      <div class="price-card">
+        <p class="price-card__plan">LIGHT</p>
+        <div class="price-card__price">
+          <span class="price-card__currency">¥</span>
+          <span class="price-card__amount">9,800</span>
+          <span class="price-card__unit">/ 月</span>
+        </div>
+        <hr class="price-card__divider">
+        <ul class="price-card__features">
+          <li>機能A：ベーシック利用</li>
+          <li>月間○○件まで</li>
+          <li>メールサポート</li>
+          <li>レポート機能（基本）</li>
+        </ul>
+        <a class="price-card__cta" href="#">このプランで始める</a>
+      </div>
+
+      <div class="price-card price-card--recommended">
+        <span class="price-card__badge">おすすめ</span>
+        <p class="price-card__plan">STANDARD</p>
+        <div class="price-card__price">
+          <span class="price-card__currency">¥</span>
+          <span class="price-card__amount">29,800</span>
+          <span class="price-card__unit">/ 月</span>
+        </div>
+        <hr class="price-card__divider">
+        <ul class="price-card__features">
+          <li>機能A・B・C：フル利用</li>
+          <li>月間○○件まで</li>
+          <li>チャット＋電話サポート</li>
+          <li>レポート機能（詳細）</li>
+          <li>API連携（3件まで）</li>
+        </ul>
+        <a class="price-card__cta" href="#">このプランで始める</a>
+      </div>
+
+      <div class="price-card">
+        <p class="price-card__plan">ENTERPRISE</p>
+        <div class="price-card__price">
+          <span class="price-card__amount" style="font-size:1.8rem;">お問い合わせ</span>
+        </div>
+        <hr class="price-card__divider">
+        <ul class="price-card__features">
+          <li>全機能アンロック</li>
+          <li>件数制限なし</li>
+          <li>専任サポート担当</li>
+          <li>カスタム開発対応</li>
+          <li>SLA保証</li>
+        </ul>
+        <a class="price-card__cta" href="#">お問い合わせ</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

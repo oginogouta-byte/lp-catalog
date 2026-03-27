@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root {
+    --svc-bg: #fff;
+    --svc-accent: #222;
+    --svc-text: #555;
+    --svc-tab-active-bg: #222;
+    --svc-tab-active-color: #fff;
+    --svc-tab-border: #ddd;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .service-section {
+    padding: 64px 24px;
+    background: var(--svc-bg);
+    font-family: -apple-system, 'Hiragino Sans', sans-serif;
+  }
+
+  .service-section h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--svc-accent);
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .service-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .svc-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--svc-tab-border);
+    margin-bottom: 0;
+  }
+
+  .svc-tab {
+    flex: 1;
+    padding: 12px 4px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: #999;
+    font-family: inherit;
+    transition: all 0.2s;
+  }
+
+  .svc-tab.active {
+    color: var(--svc-accent);
+    border-bottom-color: var(--svc-accent);
+  }
+
+  .svc-panel {
+    display: none;
+    padding: 40px 0;
+  }
+
+  .svc-panel.active {
+    display: block;
+  }
+
+  .svc-panel-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .svc-panel-img {
+    flex-shrink: 0;
+    width: 100%;
+    height: 200px;
+    background: #e5e5e5;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #999;
+  }
+
+  .svc-panel-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--svc-accent);
+    margin-bottom: 16px;
+  }
+
+  .svc-panel-body {
+    font-size: 13px;
+    color: var(--svc-text);
+    line-height: 2;
+    margin-bottom: 20px;
+  }
+
+  .svc-panel-features {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .svc-panel-features li {
+    font-size: 12px;
+    color: var(--svc-accent);
+    background: #f3f3f3;
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-weight: 500;
+  }
+
+  /* ── PC ── */
+  @media (min-width: 768px) {
+    .service-section { padding: 120px 40px; }
+    .service-section h2 { font-size: 40px; margin-bottom: 48px; }
+    .svc-tab { font-size: 22px; padding: 18px 12px; }
+
+    .svc-panel { padding: 56px 0; }
+    .svc-panel-inner { gap: 36px; }
+    .svc-panel-img { width: 100%; height: 360px; }
+    .svc-panel-title { font-size: 32px; margin-bottom: 24px; }
+    .svc-panel-body { font-size: 24px; margin-bottom: 28px; }
+    .svc-panel-features li { font-size: 20px; padding: 10px 22px; }
+  }
+
+  @media (min-width: 1200px) {
+    .svc-panel-img { height: 420px; }
+    .svc-panel-title { font-size: 36px; }
+    .svc-panel-body { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+  <section class="service-section">
+    <h2>サービス紹介</h2>
+    <div class="service-inner">
+      <div class="svc-tabs">
+        <button class="svc-tab active" onclick="switchSvcTab(0)">業務効率化</button>
+        <button class="svc-tab" onclick="switchSvcTab(1)">データ分析</button>
+        <button class="svc-tab" onclick="switchSvcTab(2)">組織支援</button>
+      </div>
+
+      <div class="svc-panel active">
+        <div class="svc-panel-inner">
+          <div class="svc-panel-img">IMAGE</div>
+          <div class="svc-panel-text">
+            <h3 class="svc-panel-title">業務プロセスの自動化</h3>
+            <p class="svc-panel-body">
+              定型業務を自動化し、人的ミスを排除。チームが本来注力すべき
+              創造的な業務に集中できる環境を構築します。導入後の運用サポートも
+              万全の体制でお応えします。
+            </p>
+            <ul class="svc-panel-features">
+              <li>RPA連携</li>
+              <li>ワークフロー設計</li>
+              <li>レポート自動生成</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-panel">
+        <div class="svc-panel-inner">
+          <div class="svc-panel-img">IMAGE</div>
+          <div class="svc-panel-text">
+            <h3 class="svc-panel-title">リアルタイムデータ分析</h3>
+            <p class="svc-panel-body">
+              散在するデータを統合し、ダッシュボードで可視化。
+              KPIのモニタリングから深掘り分析まで、データドリブンな
+              意思決定をサポートします。
+            </p>
+            <ul class="svc-panel-features">
+              <li>BI連携</li>
+              <li>カスタムダッシュボード</li>
+              <li>アラート通知</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-panel">
+        <div class="svc-panel-inner">
+          <div class="svc-panel-img">IMAGE</div>
+          <div class="svc-panel-text">
+            <h3 class="svc-panel-title">組織ナレッジの共有基盤</h3>
+            <p class="svc-panel-body">
+              属人化した業務知識をチーム全体で共有。ドキュメント管理から
+              ナレッジベースの構築まで、組織のスケールを支える
+              基盤を提供します。
+            </p>
+            <ul class="svc-panel-features">
+              <li>ナレッジベース</li>
+              <li>オンボーディング支援</li>
+              <li>権限管理</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    function switchSvcTab(idx) {
+      document.querySelectorAll('.svc-tab').forEach((btn, i) => btn.classList.toggle('active', i === idx));
+      document.querySelectorAll('.svc-panel').forEach((p, i) => p.classList.toggle('active', i === idx));
+    }
+  </script>
+</body>
+</html>

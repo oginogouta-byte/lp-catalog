@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root {
+    --impact-bg: #1a1a2e;
+    --impact-text-color: #fff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .impact-section {
+    background: var(--impact-bg);
+    font-family: -apple-system, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    overflow: hidden;
+  }
+
+  /* ── キーワードエリア ── */
+  .impact-keyword {
+    display: flex;
+  }
+
+  .impact-keyword-text {
+    writing-mode: vertical-rl;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--impact-text-color);
+    line-height: 1.5;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── 写真 ── */
+  .impact-photo {
+    overflow: hidden;
+    margin: 0 24px;
+    border-radius: 8px;
+    height: 240px;
+  }
+
+  .impact-photo-inner {
+    width: 100%;
+    height: 100%;
+    background: #aaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #777;
+  }
+
+  .impact-section {
+    padding: 56px 0 48px;
+  }
+
+  .impact-keyword {
+    padding: 0 24px;
+    margin-bottom: 36px;
+    justify-content: center;
+  }
+
+  .impact-keyword-text {
+    font-size: 36px;
+    height: 280px;
+    line-height: 1.6;
+  }
+
+  /* ================================
+     PC（min-width: 768px）
+     ================================ */
+  @media (min-width: 768px) {
+    .impact-section {
+      padding: 100px 0 80px;
+    }
+
+    .impact-keyword {
+      padding: 0 40px;
+      margin-bottom: 60px;
+    }
+
+    .impact-keyword-text {
+      font-size: 64px;
+      height: 500px;
+      line-height: 1.5;
+    }
+
+    .impact-photo {
+      margin: 0 40px;
+      height: 420px;
+    }
+  }
+
+  /* ── PC large ── */
+  @media (min-width: 1200px) {
+    .impact-keyword-text {
+      font-size: 72px;
+      height: 560px;
+    }
+
+    .impact-photo {
+      height: 480px;
+    }
+  }
+</style>
+</head>
+<body>
+  <section class="impact-section">
+
+    <!-- 縦書きキーワード -->
+    <div class="impact-keyword">
+      <h2 class="impact-keyword-text">「一体感」と<br>「挑戦心」、<br>「働きやすさ」<br>がキーワード</h2>
+    </div>
+
+    <!-- 写真 -->
+    <div class="impact-photo">
+      <div class="impact-photo-inner">画像</div>
+    </div>
+
+  </section>
+</body>
+</html>

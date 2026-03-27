@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Price_C — シンプル料金リスト型</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: sans-serif; background: #fff; color: #111; }
+
+    .price-section { padding: 64px 20px; background: #fff; }
+
+    .price-inner { max-width: 800px; margin: 0 auto; }
+
+    .price-heading {
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 12px;
+      letter-spacing: .04em;
+    }
+
+    .price-lead {
+      font-size: 0.875rem;
+      text-align: center;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 48px;
+    }
+
+    /* ── 料金リスト ── */
+    .price-list {
+      list-style: none;
+      border-top: 2px solid #111;
+    }
+
+    .price-item {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .price-item__left {
+      flex: 1;
+    }
+
+    .price-item__label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 4px;
+    }
+
+    .price-item__name {
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .price-item__desc {
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+
+    .price-item__right {
+      flex: 0 0 auto;
+      text-align: right;
+    }
+
+    .price-item__amount {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -.01em;
+    }
+
+    .price-item__tax {
+      font-size: 0.75rem;
+      color: #888;
+      display: block;
+    }
+
+    /* 初期費用など強調行 */
+    .price-item--free .price-item__amount {
+      color: #111;
+    }
+
+    .price-item--free .price-item__amount::after {
+      content: '無料';
+    }
+
+    /* 注釈 */
+    .price-note {
+      margin-top: 24px;
+      padding: 16px 20px;
+      background: #f5f5f5;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .price-note p + p { margin-top: 6px; }
+
+    /* CTA */
+    .price-cta {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .price-cta__btn {
+      display: inline-block;
+      border: 2px solid #111;
+      border-radius: 6px;
+      padding: 14px 40px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-decoration: none;
+      color: #111;
+    }
+
+    .price-cta__sub {
+      font-size: 0.75rem;
+      color: #888;
+      margin-top: 8px;
+    }
+
+    @media (min-width: 768px) {
+      .price-heading { font-size: 2rem; }
+
+      .price-item { padding: 24px 0; }
+
+      .price-item__name { font-size: 1.1rem; }
+
+      .price-item__amount { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="price-section">
+  <div class="price-inner">
+    <h2 class="price-heading">料金一覧</h2>
+    <p class="price-lead">
+      初期費用・解約手数料は一切かかりません。<br>
+      すべてのプランに14日間の無料体験が含まれます。
+    </p>
+
+    <ul class="price-list">
+
+      <li class="price-item price-item--free">
+        <div class="price-item__left">
+          <p class="price-item__label">SETUP</p>
+          <p class="price-item__name">初期費用</p>
+          <p class="price-item__desc">アカウント開設・初期設定・オンボーディング含む</p>
+        </div>
+        <div class="price-item__right">
+          <span class="price-item__amount"></span>
+        </div>
+      </li>
+
+      <li class="price-item">
+        <div class="price-item__left">
+          <p class="price-item__label">LIGHT</p>
+          <p class="price-item__name">ライトプラン</p>
+          <p class="price-item__desc">月間100件まで・メールサポート・基本機能</p>
+        </div>
+        <div class="price-item__right">
+          <span class="price-item__amount">¥9,800</span>
+          <span class="price-item__tax">/ 月（税抜）</span>
+        </div>
+      </li>
+
+      <li class="price-item">
+        <div class="price-item__left">
+          <p class="price-item__label">STANDARD</p>
+          <p class="price-item__name">スタンダードプラン</p>
+          <p class="price-item__desc">月間1,000件まで・チャット＋電話サポート・全機能</p>
+        </div>
+        <div class="price-item__right">
+          <span class="price-item__amount">¥29,800</span>
+          <span class="price-item__tax">/ 月（税抜）</span>
+        </div>
+      </li>
+
+      <li class="price-item">
+        <div class="price-item__left">
+          <p class="price-item__label">OPTION</p>
+          <p class="price-item__name">追加ユーザー</p>
+          <p class="price-item__desc">スタンダードプランの追加アカウント（1名あたり）</p>
+        </div>
+        <div class="price-item__right">
+          <span class="price-item__amount">¥2,000</span>
+          <span class="price-item__tax">/ 月（税抜）</span>
+        </div>
+      </li>
+
+      <li class="price-item">
+        <div class="price-item__left">
+          <p class="price-item__label">ENTERPRISE</p>
+          <p class="price-item__name">エンタープライズ</p>
+          <p class="price-item__desc">件数無制限・専任担当・カスタム開発・SLA保証</p>
+        </div>
+        <div class="price-item__right">
+          <span class="price-item__amount" style="font-size:1rem; font-weight:700;">要相談</span>
+        </div>
+      </li>
+
+    </ul>
+
+    <div class="price-note">
+      <p>※ 表示価格はすべて税抜きです。ご利用には別途消費税が加算されます。</p>
+      <p>※ 年間一括払いの場合、月額料金より15%割引となります。</p>
+    </div>
+
+    <div class="price-cta">
+      <a class="price-cta__btn" href="#">無料で始める</a>
+      <p class="price-cta__sub">クレジットカード不要・14日間無料</p>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

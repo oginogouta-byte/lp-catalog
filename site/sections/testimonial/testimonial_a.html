@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  .testimonial-section {
+    padding: 80px 20px;
+    background: #f9fafb;
+    font-family: -apple-system, sans-serif;
+    text-align: center;
+  }
+  .testimonial-section h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 12px;
+  }
+  .testimonial-section .sub {
+    font-size: 15px;
+    color: #888;
+    margin-bottom: 48px;
+  }
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .logo-box {
+    aspect-ratio: 2/1;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #bbb;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  @media (min-width: 768px) {
+    .testimonial-section { padding: 140px 40px; }
+    .testimonial-section h2 { font-size: 48px; margin-bottom: 20px; }
+    .testimonial-section .sub { font-size: 26px; margin-bottom: 72px; }
+    .logo-grid { gap: 32px; }
+    .logo-box { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+  <section class="testimonial-section">
+    <h2>導入実績</h2>
+    <p class="sub">累計1,000社以上の企業にご利用いただいています</p>
+    <div class="logo-grid">
+      <div class="logo-box">LOGO</div>
+      <div class="logo-box">LOGO</div>
+      <div class="logo-box">LOGO</div>
+      <div class="logo-box">LOGO</div>
+      <div class="logo-box">LOGO</div>
+      <div class="logo-box">LOGO</div>
+      <div class="logo-box">LOGO</div>
+      <div class="logo-box">LOGO</div>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  .pain-section {
+    padding: 80px 20px;
+    background: #f3f4f6;
+    font-family: -apple-system, sans-serif;
+  }
+  .pain-section h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .pain-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 800px;
+    margin-inline: auto;
+  }
+  .pain-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .pain-card .icon {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+  .pain-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 8px;
+  }
+  .pain-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+  }
+  @media (min-width: 768px) {
+    .pain-section { padding: 140px 40px; }
+    .pain-section h2 { font-size: 48px; margin-bottom: 80px; }
+    .pain-grid { gap: 40px; max-width: 1000px; }
+    .pain-card { padding: 56px 40px; border-radius: 20px; }
+    .pain-card .icon { font-size: 64px; margin-bottom: 28px; }
+    .pain-card h3 { font-size: 28px; margin-bottom: 14px; }
+    .pain-card p { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+  <section class="pain-section">
+    <h2>こんな課題を感じていませんか？</h2>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="icon">⏰</div>
+        <h3>時間が足りない</h3>
+        <p>日々のルーティン業務に追われ、本来注力すべき仕事に時間を割けない。</p>
+      </div>
+      <div class="pain-card">
+        <div class="icon">📊</div>
+        <h3>データが見えない</h3>
+        <p>情報が複数のツールに散らばり、全体像の把握に毎回苦労している。</p>
+      </div>
+      <div class="pain-card">
+        <div class="icon">🔄</div>
+        <h3>属人化が進んでいる</h3>
+        <p>特定のメンバーに業務が集中し、組織としてのスケールが難しい。</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

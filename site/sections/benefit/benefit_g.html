@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .benefit-section {
+    position: relative;
+    padding: 80px 0 120px;
+    background: #f5f5f5;
+    font-family: 'Zen Kaku Gothic New', -apple-system, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    color: #000;
+    overflow: hidden;
+  }
+
+  /* ── 各フィーチャーアイテム ── */
+  .benefit-feature {
+    position: relative;
+    padding: 0 30px;
+  }
+
+  .benefit-feature + .benefit-feature {
+    margin-top: 72px;
+  }
+
+  /* 番号ラベル: "feature" + "01" */
+  .benefit-feature-num {
+    position: relative;
+    z-index: 2;
+    margin-bottom: -12px;
+  }
+
+  .benefit-feature-num-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: #888;
+    line-height: 1;
+  }
+
+  .benefit-feature-num-number {
+    display: block;
+    font-size: 48px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: #aaa;
+    line-height: 1;
+    margin-top: 2px;
+  }
+
+  /* 画像 */
+  .benefit-feature-vi {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .benefit-feature-vi-placeholder {
+    width: 100%;
+    background: #d5d5d5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .benefit-feature-vi-placeholder span {
+    font-size: 12px;
+    color: rgba(0,0,0,0.2);
+    font-weight: 600;
+  }
+
+  /* 01: 縦長画像、左オフセット */
+  .benefit-feature.is-01 .benefit-feature-vi {
+    margin-left: 30px;
+  }
+
+  .benefit-feature.is-01 .benefit-feature-vi-placeholder {
+    aspect-ratio: 254 / 316;
+  }
+
+  /* 02: 横長画像、左少しオフセット */
+  .benefit-feature.is-02 .benefit-feature-vi {
+    margin-left: 15px;
+  }
+
+  .benefit-feature.is-02 .benefit-feature-vi-placeholder {
+    aspect-ratio: 285 / 190;
+  }
+
+  /* 03: 正方形画像、右寄せ */
+  .benefit-feature.is-03 .benefit-feature-vi {
+    margin-left: 40px;
+  }
+
+  .benefit-feature.is-03 .benefit-feature-vi-placeholder {
+    aspect-ratio: 250 / 280;
+  }
+
+  /* テキスト見出し（画像に被る） */
+  .benefit-feature-head {
+    position: relative;
+    z-index: 2;
+    margin-top: -25px;
+  }
+
+  .benefit-feature-title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.015em;
+    color: #fff;
+  }
+
+  /* 行ごとの背景帯 */
+  .benefit-feature-title-row {
+    display: inline;
+    background: #555;
+    padding: 2px 8px 3px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    line-height: 1.8;
+  }
+
+  /* 行を縦に並べるため */
+  .benefit-feature-title span {
+    display: block;
+    width: fit-content;
+  }
+
+  /* ================================
+     PC（min-width: 768px）
+     ================================ */
+  @media (min-width: 768px) {
+    .benefit-section {
+      padding: 140px 0 160px;
+    }
+
+    .benefit-feature {
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 40px;
+    }
+
+    .benefit-feature + .benefit-feature {
+      margin-top: 120px;
+    }
+
+    .benefit-feature-num-label {
+      font-size: 20px;
+    }
+
+    .benefit-feature-num-number {
+      font-size: 80px;
+    }
+
+    .benefit-feature-num {
+      margin-bottom: -16px;
+    }
+
+    .benefit-feature.is-01 .benefit-feature-vi {
+      margin-left: 40px;
+    }
+
+    .benefit-feature.is-02 .benefit-feature-vi {
+      margin-left: 20px;
+    }
+
+    .benefit-feature.is-03 .benefit-feature-vi {
+      margin-left: 50px;
+    }
+
+    .benefit-feature-head {
+      margin-top: -36px;
+    }
+
+    .benefit-feature-title {
+      font-size: 34px;
+    }
+
+    .benefit-feature-title-row {
+      padding: 4px 12px 5px;
+    }
+  }
+</style>
+</head>
+<body>
+  <section class="benefit-section">
+
+    <!-- Feature 01 -->
+    <div class="benefit-feature is-01">
+      <div class="benefit-feature-num">
+        <span class="benefit-feature-num-label">feature</span>
+        <span class="benefit-feature-num-number">01</span>
+      </div>
+      <div class="benefit-feature-vi">
+        <div class="benefit-feature-vi-placeholder">
+          <span>IMAGE</span>
+        </div>
+      </div>
+      <header class="benefit-feature-head">
+        <h2 class="benefit-feature-title">
+          <span><span class="benefit-feature-title-row">アイスピーチ</span></span>
+          <span><span class="benefit-feature-title-row">レモネードの香り</span></span>
+        </h2>
+      </header>
+    </div>
+
+    <!-- Feature 02 -->
+    <div class="benefit-feature is-02">
+      <div class="benefit-feature-num">
+        <span class="benefit-feature-num-label">feature</span>
+        <span class="benefit-feature-num-number">02</span>
+      </div>
+      <div class="benefit-feature-vi">
+        <div class="benefit-feature-vi-placeholder">
+          <span>IMAGE</span>
+        </div>
+      </div>
+      <header class="benefit-feature-head">
+        <h2 class="benefit-feature-title">
+          <span><span class="benefit-feature-title-row">髪・頭皮に潤いを与え、</span></span>
+          <span><span class="benefit-feature-title-row">ツヤのある健やかな髪へ</span></span>
+        </h2>
+      </header>
+    </div>
+
+    <!-- Feature 03 -->
+    <div class="benefit-feature is-03">
+      <div class="benefit-feature-num">
+        <span class="benefit-feature-num-label">feature</span>
+        <span class="benefit-feature-num-number">03</span>
+      </div>
+      <div class="benefit-feature-vi">
+        <div class="benefit-feature-vi-placeholder">
+          <span>IMAGE</span>
+        </div>
+      </div>
+      <header class="benefit-feature-head">
+        <h2 class="benefit-feature-title">
+          <span><span class="benefit-feature-title-row">植物由来の成分で</span></span>
+          <span><span class="benefit-feature-title-row">やさしく洗い上げる</span></span>
+        </h2>
+      </header>
+    </div>
+
+  </section>
+</body>
+</html>

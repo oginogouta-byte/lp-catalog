@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  .service-section {
+    padding: 80px 20px;
+    background: #fff;
+    font-family: -apple-system, sans-serif;
+  }
+  .service-section h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .service-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .service-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .service-card .img {
+    height: 180px;
+    background: linear-gradient(135deg, #f0f4ff, #e0e7ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6366f1;
+    font-weight: 600;
+  }
+  .service-card .info {
+    padding: 20px;
+  }
+  .service-card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 8px;
+  }
+  .service-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+  }
+  @media (min-width: 768px) {
+    .service-section { padding: 140px 40px; }
+    .service-section h2 { font-size: 48px; margin-bottom: 72px; }
+    .service-grid { gap: 40px; }
+    .service-card .img { height: 320px; font-size: 18px; }
+    .service-card .info { padding: 36px; }
+    .service-card h3 { font-size: 28px; margin-bottom: 14px; }
+    .service-card p { font-size: 24px; line-height: 1.8; }
+  }
+</style>
+</head>
+<body>
+  <section class="service-section">
+    <h2>サービス紹介</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="img">IMAGE</div>
+        <div class="info">
+          <h3>業務自動化ツール</h3>
+          <p>定型業務をワンクリックで自動化。人的ミスを削減し、作業効率を大幅に向上させます。</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="img">IMAGE</div>
+        <div class="info">
+          <h3>データ分析ダッシュボード</h3>
+          <p>リアルタイムでKPIを可視化。直感的なUIで、誰でもデータドリブンな意思決定が可能に。</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="img">IMAGE</div>
+        <div class="info">
+          <h3>チームコラボレーション</h3>
+          <p>プロジェクト管理からコミュニケーションまで。チームの連携をスムーズにする統合環境。</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="img">IMAGE</div>
+        <div class="info">
+          <h3>カスタマーサポート基盤</h3>
+          <p>問い合わせ管理からFAQ自動応答まで。顧客対応の品質と効率を同時に向上させます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root {
+    /* テイスト適用時はここを変更 */
+    --inst-bg: #111;
+    --inst-sub-color: #ccc;
+    --inst-name-color: #eee;
+    --inst-en-color: #888;
+    --inst-text-color: rgba(238,238,238,0.8);
+    --inst-accent-color: #ccc;
+    --inst-accent-underline: #ccc;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .instructor-section {
+    background: var(--inst-bg);
+    font-family: -apple-system, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    overflow: hidden;
+  }
+
+  /* ── プロフィールブロック ── */
+  .instructor-block {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  /* SP: 写真が先 */
+  .instructor-photo {
+    position: relative;
+    overflow: hidden;
+    order: -1;
+    width: 100%;
+    height: 320px;
+  }
+
+  /* ── テキストエリア ── */
+  .instructor-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 32px 20px 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* 肩書き */
+  .instructor-sub {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--inst-sub-color);
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+
+  /* 名前 */
+  .instructor-name {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--inst-name-color);
+    letter-spacing: 0.1em;
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+
+  /* ローマ字 */
+  .instructor-en {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--inst-en-color);
+    letter-spacing: 0.08em;
+    margin-bottom: 24px;
+  }
+
+  /* キャッチコピー */
+  .instructor-catch {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--inst-name-color);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .instructor-catch .underline {
+    text-decoration: underline;
+    text-decoration-color: var(--inst-accent-underline);
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+
+  /* 本文 */
+  .instructor-desc {
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--inst-text-color);
+    letter-spacing: 0.02em;
+  }
+
+  .instructor-desc + .instructor-desc {
+    margin-top: 12px;
+  }
+
+  .instructor-photo-inner {
+    width: 100%;
+    height: 100%;
+    background: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #888;
+    letter-spacing: 0.08em;
+    object-fit: cover;
+  }
+
+  /* ── PC wide（min-width: 768px） ── */
+  @media (min-width: 768px) {
+    .instructor-photo {
+      height: 520px;
+    }
+
+    .instructor-text {
+      padding: 48px 40px 56px;
+    }
+
+    .instructor-sub {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    .instructor-name {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .instructor-en {
+      font-size: 16px;
+      margin-bottom: 36px;
+    }
+
+    .instructor-catch {
+      font-size: 26px;
+      margin-bottom: 28px;
+    }
+
+    .instructor-desc {
+      font-size: 18px;
+    }
+
+    .instructor-desc + .instructor-desc {
+      margin-top: 18px;
+    }
+
+    .instructor-photo-inner {
+      font-size: 20px;
+    }
+  }
+</style>
+</head>
+<body>
+  <section class="instructor-section">
+
+    <div class="instructor-block">
+
+      <!-- テキストエリア -->
+      <div class="instructor-text">
+        <p class="instructor-sub">脳卒中センター長</p>
+        <h2 class="instructor-name">滝 和郎</h2>
+        <p class="instructor-en">Waro Taki</p>
+
+        <p class="instructor-catch">
+          <span class="underline">ことは1分1秒を争うので</span><br>
+          <span class="underline">直ちに脳卒中センターへ</span>
+        </p>
+
+        <p class="instructor-desc">最も強調したいのは「急にしゃべりにくくなった、手足がしびれてきた、動かしにくい、体がふらつくなど、何か変だ」と思ったら、直ちに脳卒中センターに来て検査を受けてください、ということです。</p>
+        <p class="instructor-desc">「少し経てば自然に回復するかもしれない」といったん考えてしまうと、すぐに時間がたって手遅れになり、治るものも治らなくなります。こういう方々が本当に多いのです。ことは1分1秒を争います。</p>
+      </div>
+
+      <!-- 写真エリア -->
+      <div class="instructor-photo">
+        <div class="instructor-photo-inner">人物画像</div>
+      </div>
+
+    </div>
+
+  </section>
+</body>
+</html>

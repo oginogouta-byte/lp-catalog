@@ -1,0 +1,11 @@
+{
+  "section_type": "service",
+  "section_label": "サービス・商品紹介",
+  "variants": [
+    { "id": "service_a", "name": "Service_A", "file": "service_a.html", "description": "グリッド型・カード一覧" },
+    { "id": "service_b", "name": "Service_B", "file": "service_b.html", "description": "タブ切り替え型" },
+    { "id": "service_c", "name": "Service_C", "file": "service_c.html", "description": "タブ切り替え型 — 複数サービスの詳細を省スペースで表示" },
+    { "id": "service_d", "name": "Service_D", "file": "service_d.html", "description": "実績カードグリッド型 — SP2列/iPad3列、サムネイル+タグ+人名+タイトル、動画マーク対応" },
+    { "id": "service_e", "name": "Service_E", "file": "service_e.html", "description": "左見出し固定＋右2列カードグリッド型 — 黒背景・英語ラベル+日本語見出し+説明+アイコン、SP縦積み/PC左右分割" }
+  ]
+}

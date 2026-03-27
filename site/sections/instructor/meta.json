@@ -1,0 +1,7 @@
+{
+  "section_type": "instructor",
+  "section_label": "講師実績",
+  "variants": [
+    { "id": "instructor_a", "name": "Instructor_A", "file": "instructor_a.html", "description": "写真+プロフィール型 — 左テキスト(肩書き・名前・ローマ字・説明)+右人物写真、SP縦積み" }
+  ]
+}

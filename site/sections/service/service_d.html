@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service_D — 実績カードグリッド型（JS masonry 2列）</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: sans-serif; background: #fff; color: #111; }
+
+    /* ── セクション ── */
+    .grid-section {
+      padding: 40px 5px;
+      background: #fff;
+    }
+
+    /* ── コンテンツ最大幅 ── */
+    .grid-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* ── グリッドラッパー: SP/PC ともに JS masonry ── */
+    .grid-wrap {
+      position: relative;
+      width: 100%;
+      display: block;
+    }
+
+    /* ── カード: JS が absolute で上書きする ── */
+    .grid-item {
+      box-sizing: border-box;
+      padding: 0 7px;
+    }
+
+    /* ── サムネイル ── */
+    .grid-item__thumb {
+      display: block;
+      width: 100%;
+      border-radius: 25px;
+      overflow: hidden;
+      background: #d8d8d8;
+      position: relative;
+    }
+
+    /* aspect-ratio は data 属性で JS から inline style でセット */
+
+    /* 動画プレースホルダーの再生アイコン */
+    .grid-item__thumb--video::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.18);
+    }
+    .grid-item__thumb--video::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-40%, -50%);
+      width: 0; height: 0;
+      border-style: solid;
+      border-width: 14px 0 14px 24px;
+      border-color: transparent transparent transparent #fff;
+      z-index: 1;
+    }
+
+    /* ── サムネイル margin-bottom: SP=5px ── */
+    .grid-item__thumb {
+      margin-bottom: 5px;
+    }
+
+    /* ── middle: SP は flex-wrap あり ── */
+    .grid-item__middle {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    /* タグ ul */
+    .grid-item__tags {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      margin-bottom: 5px;
+    }
+
+    /* タグ li: SP は margin 3px 4px 3px 0 ── */
+    .grid-item__tags li {
+      display: block;
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 14px;
+      letter-spacing: 0.9px;
+      color: #fff;
+      background: #111;
+      border: 2px solid #111;
+      border-radius: 30px;
+      padding: 3px 15px;
+      margin: 3px 4px 3px 0;
+    }
+
+    /* 人名 ul */
+    .grid-item__hash {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      margin-bottom: 5px;
+    }
+
+    .grid-item__hash li {
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 23.8px;
+      letter-spacing: 0.9px;
+      color: #111;
+    }
+
+    /* ── タイトル: SP は 14px・line-clamp 2 ── */
+    .grid-item__ttl {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.4;
+      letter-spacing: 0.9px;
+      color: #111;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* ── PC（≥768px）: 差分のみ ── */
+    @media (min-width: 768px) {
+      .grid-section { padding: 40px 20px; }
+
+      .grid-item { padding: 0; }
+
+      .grid-item__thumb { margin-bottom: 10px; }
+
+      .grid-item__tags { margin-bottom: 0; }
+
+      .grid-item__tags li { margin: 3px 8px 3px 0; }
+
+      .grid-item__ttl {
+        font-size: 1.6rem;
+        line-height: 1.7;
+        -webkit-line-clamp: unset;
+        overflow: visible;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section class="grid-section">
+  <div class="grid-inner">
+    <div class="grid-wrap" id="grid-wrap">
+
+      <!-- 1: 道新スポーツ — 340×579 (portrait) -->
+      <div class="grid-item" data-ratio="1.703">
+        <span class="grid-item__thumb" style="padding-top: 170.3%;"></span>
+        <div class="grid-item__middle">
+          <ul class="grid-item__tags">
+            <li>CM</li>
+            <li>WEB</li>
+          </ul>
+          <ul class="grid-item__hash">
+            <li># 福士 天音</li>
+          </ul>
+        </div>
+        <h3 class="grid-item__ttl">【道新スポーツ あなたの知らない"好き"がある。編】</h3>
+      </div>
+
+      <!-- 2: NEW FACE 加賀靖浩 — 340×226 (3:2 landscape) -->
+      <div class="grid-item" data-ratio="0.665">
+        <span class="grid-item__thumb" style="padding-top: 66.5%;"></span>
+        <div class="grid-item__middle">
+          <ul class="grid-item__tags">
+            <li>NEW FACE</li>
+          </ul>
+          <ul class="grid-item__hash">
+            <li># 加賀 靖浩</li>
+          </ul>
+        </div>
+        <h3 class="grid-item__ttl">加賀靖浩が所属モデルに加わりました</h3>
+      </div>
+
+      <!-- 3: ポラリン電気 — 340×289 (nearly square) -->
+      <div class="grid-item" data-ratio="0.850">
+        <span class="grid-item__thumb" style="padding-top: 85%;"></span>
+        <div class="grid-item__middle">
+          <ul class="grid-item__tags">
+            <li>OTHERS</li>
+            <li>TV</li>
+          </ul>
+          <ul class="grid-item__hash">
+            <li># 木村 真穂</li>
+          </ul>
+        </div>
+        <h3 class="grid-item__ttl">ポラリン電気 インフォマーシャル出演</h3>
+      </div>
+
+      <!-- 4: アンヌ遙香 お知らせ — 340×510 (portrait 2:3) -->
+      <div class="grid-item" data-ratio="1.500">
+        <span class="grid-item__thumb" style="padding-top: 150%;"></span>
+        <div class="grid-item__middle">
+          <ul class="grid-item__tags">
+            <li>お知らせ</li>
+            <li>最新のお知らせ</li>
+          </ul>
+          <ul class="grid-item__hash">
+            <li># アンヌ 遙香</li>
+          </ul>
+        </div>
+        <h3 class="grid-item__ttl">HAPPY WOMAN FESTA 2026 HOKKAIDO／アンヌ遙香出演決定</h3>
+      </div>
+
+      <!-- 5: HBCラジオ — 340×340 (1:1 square) -->
+      <div class="grid-item" data-ratio="1.000">
+        <span class="grid-item__thumb" style="padding-top: 100%;"></span>
+        <div class="grid-item__middle">
+          <ul class="grid-item__tags">
+            <li>お知らせ</li>
+            <li>メディア</li>
+          </ul>
+          <ul class="grid-item__hash">
+            <li># 福士 天音</li>
+          </ul>
+        </div>
+        <h3 class="grid-item__ttl">HBCラジオ 中継リポーター就任</h3>
+      </div>
+
+      <!-- 6: びっくりドンキー（動画）— 340×226 (3:2) -->
+      <div class="grid-item" data-ratio="0.665">
+        <span class="grid-item__thumb grid-item__thumb--video" style="padding-top: 66.5%;"></span>
+        <div class="grid-item__middle">
+          <ul class="grid-item__tags">
+            <li>CM</li>
+            <li>WEB</li>
+          </ul>
+          <ul class="grid-item__hash">
+            <li># 福士 天音</li>
+          </ul>
+        </div>
+        <h3 class="grid-item__ttl">【びっくりドンキー「いい日をつくる、一皿を。」篇】</h3>
+      </div>
+
+      <!-- 7: ホクリョウ — 340×226 (3:2) -->
+      <div class="grid-item" data-ratio="0.665">
+        <span class="grid-item__thumb" style="padding-top: 66.5%;"></span>
+        <div class="grid-item__middle">
+          <ul class="grid-item__tags">
+            <li>CM</li>
+            <li>WEB</li>
+          </ul>
+          <ul class="grid-item__hash">
+            <li># 福士 天音</li>
+          </ul>
+        </div>
+        <h3 class="grid-item__ttl">【ホクリョウ「毎日毎日3百万個」】</h3>
+      </div>
+
+    </div><!-- /.grid-wrap -->
+  </div><!-- /.grid-inner -->
+</section>
+
+<script>
+(function() {
+  var COLS     = 2;
+  var COL_W_PC = 340;  // PC実測値
+  var GAP_PC   = 40;   // PC実測値
+  var WRAP_W_PC = COLS * COL_W_PC + (COLS - 1) * GAP_PC; // 720px
+  var MB       = 40;
+  var BP       = 768;
+
+  var wrap  = document.getElementById('grid-wrap');
+  var items = Array.from(wrap.querySelectorAll('.grid-item'));
+
+  function layout() {
+    var isPC = window.innerWidth >= BP;
+    var colW, gap;
+
+    if (isPC) {
+      wrap.style.width = WRAP_W_PC + 'px';
+      colW = COL_W_PC;
+      gap  = GAP_PC;
+    } else {
+      // SP: wrapの実幅を使って動的計算（gap=0、paddingで間隔調整）
+      wrap.style.width = '';
+      colW = Math.floor(wrap.offsetWidth / 2);
+      gap  = 0;
+    }
+
+    var colH = [0, 0];
+
+    items.forEach(function(item) {
+      var col = colH[0] <= colH[1] ? 0 : 1;
+
+      item.style.position = 'absolute';
+      item.style.width    = colW + 'px';
+      item.style.left     = (col * (colW + gap)) + 'px';
+      item.style.top      = colH[col] + 'px';
+
+      colH[col] += item.offsetHeight + MB;
+    });
+
+    wrap.style.height = Math.max(colH[0], colH[1]) + 'px';
+  }
+
+  layout();
+  window.addEventListener('resize', layout);
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  .cta-section {
+    padding: 80px 20px;
+    background: #f9fafb;
+    font-family: -apple-system, sans-serif;
+  }
+  .cta-inner {
+    max-width: 520px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .cta-section h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 12px;
+  }
+  .cta-section .desc {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 36px;
+    line-height: 1.6;
+  }
+  .cta-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+  }
+  .cta-form label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .cta-form input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .cta-form input:focus { border-color: #3b82f6; }
+  .cta-form button {
+    padding: 14px;
+    background: #3b82f6;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    margin-top: 8px;
+  }
+  .cta-form button:hover { background: #2563eb; }
+  .cta-note {
+    font-size: 12px;
+    color: #999;
+    margin-top: 12px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2>お問い合わせ</h2>
+      <p class="desc">ご質問やご相談がございましたら、お気軽にお問い合わせください。担当者が1営業日以内にご連絡いたします。</p>
+      <form class="cta-form" onsubmit="return false;">
+        <div>
+          <label>お名前</label>
+          <input type="text" placeholder="山田 太郎">
+        </div>
+        <div>
+          <label>メールアドレス</label>
+          <input type="email" placeholder="taro@example.com">
+        </div>
+        <div>
+          <label>会社名</label>
+          <input type="text" placeholder="株式会社サンプル">
+        </div>
+        <button type="submit">送信する</button>
+      </form>
+      <p class="cta-note">個人情報は弊社プライバシーポリシーに基づき適切に管理いたします。</p>
+    </div>
+  </section>
+</body>
+</html>

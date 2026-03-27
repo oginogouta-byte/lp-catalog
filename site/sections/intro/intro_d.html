@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root {
+    --intro-bg: #fff;
+    --intro-title-color: #586166;
+    --intro-text-color: #586166;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .intro-section {
+    position: relative;
+    background: var(--intro-bg);
+    font-family: 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+    overflow: hidden;
+  }
+
+  /* ── テキストエリア ── */
+  .intro-text {
+    position: relative;
+    z-index: 2;
+  }
+
+  .intro-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--intro-title-color);
+    letter-spacing: 0.3em;
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+
+  .intro-body {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--intro-text-color);
+    line-height: 2.6;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── 写真共通 ── */
+  .intro-photo {
+    overflow: hidden;
+  }
+
+  .intro-photo-inner {
+    width: 100%;
+    height: 100%;
+    background: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #999;
+    letter-spacing: 0.08em;
+  }
+
+  /* ── SP defaults ── */
+  .intro-section {
+    padding: 0 0 48px;
+  }
+
+  .intro-photo--main {
+    width: 82%;
+    height: 400px;
+    margin-bottom: 48px;
+  }
+
+  .intro-text {
+    padding: 0 24px;
+    margin-bottom: 32px;
+  }
+
+  .intro-title {
+    font-size: 20px;
+    letter-spacing: 0.3em;
+    margin-bottom: 24px;
+  }
+
+  .intro-body {
+    font-size: 12px;
+    line-height: 2.6;
+  }
+
+  .intro-photos-sub {
+    position: relative;
+    height: 220px;
+    margin: 0 24px;
+  }
+
+  .intro-photo--sub1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 38%;
+    height: 100px;
+  }
+
+  .intro-photo--sub2 {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 36%;
+    height: 160px;
+  }
+
+  /* ================================
+     PC（min-width: 768px）
+     ================================ */
+  @media (min-width: 768px) {
+    .intro-section {
+      padding: 0 0 80px;
+    }
+
+    .intro-photo--main {
+      width: 82%;
+      height: 700px;
+      margin-bottom: 72px;
+    }
+
+    .intro-text {
+      padding: 0 40px;
+      margin-bottom: 48px;
+    }
+
+    .intro-title {
+      font-size: 36px;
+      letter-spacing: 0.35em;
+      margin-bottom: 40px;
+    }
+
+    .intro-body {
+      font-size: 22px;
+      line-height: 2.8;
+    }
+
+    .intro-photos-sub {
+      height: 380px;
+      margin: 0 40px;
+    }
+
+    .intro-photo--sub1 {
+      width: 38%;
+      height: 180px;
+    }
+
+    .intro-photo--sub2 {
+      top: 80px;
+      width: 36%;
+      height: 280px;
+    }
+  }
+
+  /* ── PC large ── */
+  @media (min-width: 1200px) {
+    .intro-title {
+      font-size: 40px;
+    }
+
+    .intro-body {
+      font-size: 24px;
+    }
+  }
+</style>
+</head>
+<body>
+  <section class="intro-section">
+
+    <!-- メイン写真（SP: 先頭 / PC: absolute左） -->
+    <div class="intro-photo intro-photo--main">
+      <div class="intro-photo-inner">人物画像（メイン）</div>
+    </div>
+
+    <!-- テキストエリア -->
+    <div class="intro-text">
+      <h2 class="intro-title">私は、私が変えていく</h2>
+      <p class="intro-body">
+        大人の女性の、内なる美しさ。<br>
+        華美ではなく自然に醸し出る美しさ。<br>
+        それは日々の健康と心の安寧から生まれる。<br>
+        だれかに褒められたい、認められたい、ではなく、<br>
+        あなたはあなた自身の人生を、自信をもって生きてゆこう。<br>
+        この日を、この季節を、美しく、ポジティブに。<br>
+        堂々と笑ってすごせるように。
+      </p>
+    </div>
+
+    <!-- サブ写真群（SP: テキスト下散らし / PC: absolute） -->
+    <div class="intro-photos-sub">
+      <div class="intro-photo intro-photo--sub1">
+        <div class="intro-photo-inner">人物画像（サブ1）</div>
+      </div>
+      <div class="intro-photo intro-photo--sub2">
+        <div class="intro-photo-inner">人物画像（サブ2）</div>
+      </div>
+    </div>
+
+  </section>
+</body>
+</html>

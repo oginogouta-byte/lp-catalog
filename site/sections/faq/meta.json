@@ -1,0 +1,9 @@
+{
+  "section_type": "faq",
+  "section_label": "よくある質問",
+  "variants": [
+    { "id": "faq_a", "name": "FAQ_A", "file": "faq_a.html", "description": "アコーディオン型 — クリックで開閉、省スペース" },
+    { "id": "faq_b", "name": "FAQ_B", "file": "faq_b.html", "description": "2カラムQ&A型 — 左に質問、右に回答、常時表示" },
+    { "id": "faq_c", "name": "FAQ_C", "file": "faq_c.html", "description": "カードグリッド型 — Q&Aをカードで並列表示" }
+  ]
+}

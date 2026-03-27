@@ -1,5 +1,5 @@
-/** カタログルート直下の `sections/` への相対パス（本ファイルは `catalog/site/` にある） */
-const SECTIONS_BASE = '../sections/';
+/** sections/ は site/ 直下に配置（Vercel配信対応） */
+const SECTIONS_BASE = './sections/';
 
 const SECTION_TYPES = [
   { id: 'fv', label: 'FV（ファーストビュー）' },

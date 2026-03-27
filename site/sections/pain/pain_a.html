@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  .pain-section {
+    padding: 80px 20px;
+    background: #f9fafb;
+    font-family: -apple-system, sans-serif;
+  }
+  .pain-inner { max-width: 700px; margin: 0 auto; }
+  .pain-section h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .pain-list { list-style: none; }
+  .pain-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+  }
+  .pain-list li:last-child { border-bottom: none; }
+  .pain-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: #fef2f2;
+    color: #ef4444;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+</style>
+</head>
+<body>
+  <section class="pain-section">
+    <div class="pain-inner">
+      <h2>こんなお悩みありませんか？</h2>
+      <ul class="pain-list">
+        <li><span class="pain-icon">×</span><span>業務が属人化しており、担当者が不在だと業務が止まってしまう</span></li>
+        <li><span class="pain-icon">×</span><span>Excelやスプレッドシートでの管理が限界に達している</span></li>
+        <li><span class="pain-icon">×</span><span>データが散在していて、正確な状況把握に時間がかかる</span></li>
+        <li><span class="pain-icon">×</span><span>新しいツールを導入しても、現場に定着しない</span></li>
+        <li><span class="pain-icon">×</span><span>レポート作成に毎月何時間も費やしている</span></li>
+      </ul>
+    </div>
+  </section>
+</body>
+</html>

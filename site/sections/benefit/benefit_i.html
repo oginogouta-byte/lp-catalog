@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .benefit-section {
+    padding: 72px 20px;
+    background: #fff;
+    font-family: -apple-system, 'Hiragino Sans', sans-serif;
+    color: #222;
+  }
+
+  .benefit-heading {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .benefit-heading-en {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: #999;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .benefit-heading-ja {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.6;
+  }
+
+  .benefit-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .benefit-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .benefit-image {
+    flex-shrink: 0;
+    width: 100%;
+    height: 220px;
+    background: #d5d5d5;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #999;
+  }
+
+  .benefit-list {
+    flex: 1;
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .benefit-list-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border: 1px solid #e5e5e5;
+    border-radius: 100px;
+    transition: background 0.15s;
+  }
+
+  .benefit-list-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: #222;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .benefit-list-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  /* ── PC ── */
+  @media (min-width: 768px) {
+    .benefit-section { padding: 120px 40px; }
+    .benefit-heading { margin-bottom: 80px; }
+    .benefit-heading-en { font-size: 18px; }
+    .benefit-heading-ja { font-size: 36px; }
+
+    .benefit-row {
+      gap: 48px;
+    }
+
+    .benefit-image {
+      height: 380px;
+      border-radius: 20px;
+    }
+
+    .benefit-list {
+      gap: 24px;
+    }
+
+    .benefit-list-item {
+      padding: 22px 28px;
+      gap: 20px;
+      border-radius: 100px;
+    }
+
+    .benefit-list-num {
+      width: 52px;
+      height: 52px;
+      font-size: 22px;
+    }
+
+    .benefit-list-text { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+  <section class="benefit-section">
+    <div class="benefit-heading">
+      <p class="benefit-heading-en">Point</p>
+      <h2 class="benefit-heading-ja">選ばれ続ける理由</h2>
+    </div>
+
+    <div class="benefit-content">
+      <div class="benefit-row">
+        <div class="benefit-image">IMAGE</div>
+        <ul class="benefit-list">
+          <li class="benefit-list-item">
+            <span class="benefit-list-num">1</span>
+            <span class="benefit-list-text">業界最速の導入スピード</span>
+          </li>
+          <li class="benefit-list-item">
+            <span class="benefit-list-num">2</span>
+            <span class="benefit-list-text">専任担当による手厚いサポート</span>
+          </li>
+          <li class="benefit-list-item">
+            <span class="benefit-list-num">3</span>
+            <span class="benefit-list-text">柔軟なカスタマイズに対応</span>
+          </li>
+          <li class="benefit-list-item">
+            <span class="benefit-list-num">4</span>
+            <span class="benefit-list-text">500社以上の導入実績</span>
+          </li>
+          <li class="benefit-list-item">
+            <span class="benefit-list-num">5</span>
+            <span class="benefit-list-text">初期費用ゼロ・リスクなし</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

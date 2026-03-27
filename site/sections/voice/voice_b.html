@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  .voice-section {
+    padding: 80px 20px;
+    background: #f3f4f6;
+    font-family: -apple-system, sans-serif;
+  }
+  .voice-section h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .slider-container { max-width: 700px; margin: 0 auto; position: relative; }
+  .slide {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .slide.active { display: block; }
+  .slide blockquote {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: 24px;
+  }
+  .slide .avatar {
+    width: 56px; height: 56px;
+    background: #d1d5db;
+    border-radius: 50%;
+    margin: 0 auto 12px;
+  }
+  .slide .name { font-size: 15px; font-weight: 700; color: #111; }
+  .slide .role { font-size: 13px; color: #888; }
+  .slider-nav {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .slider-nav button {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    border: 1px solid #d1d5db;
+    background: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    color: #333;
+    transition: all 0.15s;
+  }
+  .slider-nav button:hover { border-color: #3b82f6; color: #3b82f6; }
+</style>
+</head>
+<body>
+  <section class="voice-section">
+    <h2>お客様の声</h2>
+    <div class="slider-container">
+      <div class="slide active">
+        <blockquote>「これまで3つのツールを使い分けていたのが、1つで完結するようになりました。生産性が飛躍的に向上しています。」</blockquote>
+        <div class="avatar"></div>
+        <div class="name">山田 美咲</div>
+        <div class="role">株式会社テストカンパニー / マーケティング部</div>
+      </div>
+      <div class="slide">
+        <blockquote>「直感的なUIで、ITリテラシーの低いメンバーでもすぐに使いこなせました。社内の評判も非常に良いです。」</blockquote>
+        <div class="avatar"></div>
+        <div class="name">高橋 健太</div>
+        <div class="role">合同会社サンプル / 代表取締役</div>
+      </div>
+      <div class="slide">
+        <blockquote>「カスタマーサポートの対応が非常に丁寧。困ったときにすぐ相談できる安心感があります。」</blockquote>
+        <div class="avatar"></div>
+        <div class="name">渡辺 由美</div>
+        <div class="role">株式会社デモコーポレーション / 総務部長</div>
+      </div>
+    </div>
+    <div class="slider-nav">
+      <button onclick="changeSlide(-1)">←</button>
+      <button onclick="changeSlide(1)">→</button>
+    </div>
+  </section>
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    function changeSlide(dir) {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + dir + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+  </script>
+</body>
+</html>
