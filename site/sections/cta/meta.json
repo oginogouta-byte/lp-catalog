@@ -2,8 +2,23 @@
   "section_type": "cta",
   "section_label": "CTA",
   "variants": [
-    { "id": "cta_a", "name": "CTA_A", "file": "cta_a.html", "description": "フルワイド型 — ダーク背景+大きなボタン、インパクト重視" },
-    { "id": "cta_b", "name": "CTA_B", "file": "cta_b.html", "description": "フォーム埋め込み型 — 訴求テキスト+フォームの2カラム" },
-    { "id": "cta_c", "name": "CTA_C", "file": "cta_c.html", "description": "2択カード型 — 資料請求と申込みの2つの導線" }
+    {
+      "id": "cta_a",
+      "name": "CTA_A",
+      "file": "cta_a.html",
+      "description": ""
+    },
+    {
+      "id": "cta_b",
+      "name": "CTA_B",
+      "file": "cta_b.html",
+      "description": ""
+    },
+    {
+      "id": "cta_c",
+      "name": "CTA_C",
+      "file": "cta_c.html",
+      "description": ""
+    }
   ]
 }

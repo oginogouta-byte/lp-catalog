@@ -2,8 +2,23 @@
   "section_type": "price",
   "section_label": "料金",
   "variants": [
-    { "id": "price_a", "name": "Price_A", "file": "price_a.html", "description": "料金プランカード横並び型 — SP縦積み/PC3列、おすすめ強調（黒塗り）、特徴リスト+CTAボタン" },
-    { "id": "price_b", "name": "Price_B", "file": "price_b.html", "description": "料金比較テーブル型 — 3プラン横並び比較表、✓/—で機能対応を可視化、SP横スクロール対応" },
-    { "id": "price_c", "name": "Price_C", "file": "price_c.html", "description": "シンプル料金リスト型 — 項目名+説明+価格の縦リスト、注釈+CTAボタン付き" }
+    {
+      "id": "price_a",
+      "name": "PRICE_A",
+      "file": "price_a.html",
+      "description": ""
+    },
+    {
+      "id": "price_b",
+      "name": "PRICE_B",
+      "file": "price_b.html",
+      "description": ""
+    },
+    {
+      "id": "price_c",
+      "name": "PRICE_C",
+      "file": "price_c.html",
+      "description": ""
+    }
   ]
 }

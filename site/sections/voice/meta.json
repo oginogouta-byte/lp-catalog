@@ -2,10 +2,35 @@
   "section_type": "voice",
   "section_label": "お客様の声",
   "variants": [
-    { "id": "voice_a", "name": "Voice_A", "file": "voice_a.html", "description": "カードグリッド型 — 複数の声を均等に並列表示" },
-    { "id": "voice_b", "name": "Voice_B", "file": "voice_b.html", "description": "縦リスト型 — 長文の声を丁寧に紹介" },
-    { "id": "voice_c", "name": "Voice_C", "file": "voice_c.html", "description": "フィーチャード型 — 1つを大きく+他を小さく表示" },
-    { "id": "voice_d", "name": "Voice_D", "file": "voice_d.html", "description": "カード横スクロール型 — イラスト+年齢バッジ+カテゴリ+タイトル+本文、scroll-snap対応" },
-    { "id": "voice_e", "name": "Voice_E", "file": "voice_e.html", "description": "画像カルーセル型 — 事例を1枚画像として配置、横スクロール+scroll-snap" }
+    {
+      "id": "voice_a",
+      "name": "VOICE_A",
+      "file": "voice_a.html",
+      "description": ""
+    },
+    {
+      "id": "voice_b",
+      "name": "VOICE_B",
+      "file": "voice_b.html",
+      "description": ""
+    },
+    {
+      "id": "voice_c",
+      "name": "VOICE_C",
+      "file": "voice_c.html",
+      "description": ""
+    },
+    {
+      "id": "voice_d",
+      "name": "VOICE_D",
+      "file": "voice_d.html",
+      "description": ""
+    },
+    {
+      "id": "voice_e",
+      "name": "VOICE_E",
+      "file": "voice_e.html",
+      "description": ""
+    }
   ]
 }

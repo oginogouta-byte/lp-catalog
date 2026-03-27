@@ -1,8 +1,24 @@
 {
   "section_type": "pricing",
-  "section_label": "料金",
+  "section_label": "料金（別バリアント）",
   "variants": [
-    { "id": "pricing_a", "name": "Pricing_A", "file": "pricing_a.html", "description": "カラム比較型（3プラン）" },
-    { "id": "pricing_b", "name": "Pricing_B", "file": "pricing_b.html", "description": "シンプルリスト型" }
+    {
+      "id": "pricing_a",
+      "name": "PRICING_A",
+      "file": "pricing_a.html",
+      "description": ""
+    },
+    {
+      "id": "pricing_b",
+      "name": "PRICING_B",
+      "file": "pricing_b.html",
+      "description": ""
+    },
+    {
+      "id": "pricing_c",
+      "name": "PRICING_C",
+      "file": "pricing_c.html",
+      "description": ""
+    }
   ]
 }

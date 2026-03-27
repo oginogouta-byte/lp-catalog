@@ -2,8 +2,23 @@
   "section_type": "testimonial",
   "section_label": "実績・事例",
   "variants": [
-    { "id": "testimonial_a", "name": "Testimonial_A", "file": "testimonial_a.html", "description": "ロゴグリッド型 — 導入企業数の訴求、信頼感の演出" },
-    { "id": "testimonial_b", "name": "Testimonial_B", "file": "testimonial_b.html", "description": "ケーススタディ型 — 課題→成果の詳細事例紹介" },
-    { "id": "testimonial_c", "name": "Testimonial_C", "file": "testimonial_c.html", "description": "数字ハイライト型 — 実績数値をインパクト重視で表示" }
+    {
+      "id": "testimonial_a",
+      "name": "TESTIMONIAL_A",
+      "file": "testimonial_a.html",
+      "description": ""
+    },
+    {
+      "id": "testimonial_b",
+      "name": "TESTIMONIAL_B",
+      "file": "testimonial_b.html",
+      "description": ""
+    },
+    {
+      "id": "testimonial_c",
+      "name": "TESTIMONIAL_C",
+      "file": "testimonial_c.html",
+      "description": ""
+    }
   ]
 }

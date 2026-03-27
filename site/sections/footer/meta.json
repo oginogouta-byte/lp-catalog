@@ -2,7 +2,17 @@
   "section_type": "footer",
   "section_label": "フッター",
   "variants": [
-    { "id": "footer_a", "name": "Footer_A", "file": "footer_a.html", "description": "ミニマル型" },
-    { "id": "footer_b", "name": "Footer_B", "file": "footer_b.html", "description": "多リンク型" }
+    {
+      "id": "footer_a",
+      "name": "FOOTER_A",
+      "file": "footer_a.html",
+      "description": ""
+    },
+    {
+      "id": "footer_b",
+      "name": "FOOTER_B",
+      "file": "footer_b.html",
+      "description": ""
+    }
   ]
 }

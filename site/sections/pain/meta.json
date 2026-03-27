@@ -2,13 +2,53 @@
   "section_type": "pain",
   "section_label": "課題・悩み提起",
   "variants": [
-    { "id": "pain_a", "name": "Pain_A", "file": "pain_a.html", "description": "縦リスト型 — 項目数自由、テキスト量自由、最も汎用" },
-    { "id": "pain_b", "name": "Pain_B", "file": "pain_b.html", "description": "カードグリッド型 — 3〜6項目の並列表示、等価な悩みの一覧" },
-    { "id": "pain_c", "name": "Pain_C", "file": "pain_c.html", "description": "左右交互型 — 画像差し込み可、長文説明向き" },
-    { "id": "pain_d", "name": "Pain_D", "file": "pain_d.html", "description": "吹き出し型 — CSS only吹き出しで悩み列挙、PC3+2配置・SP左右交互" },
-    { "id": "pain_e", "name": "Pain_E", "file": "pain_e.html", "description": "アイコン+吹き出し型 — 人物アイコン左+枠線吹き出し右、長文対応・縦並び" },
-    { "id": "pain_f", "name": "Pain_F", "file": "pain_f.html", "description": "人物+雲吹き出し型 — 中央人物画像の周囲にモクモク雲型吹き出し5つ配置、ダーク背景+波型区切り" },
-    { "id": "pain_g", "name": "Pain_G", "file": "pain_g.html", "description": "人物+モクモク雲型v2 — box-shadow多重で有機的雲形状、CSS変数+フィルター/ブレンドモード対応、波線デコ付き" },
-    { "id": "pain_h", "name": "Pain_H", "file": "pain_h.html", "description": "写真交互型 — 55%写真+45%テキスト左右交互、ダークフィルター+オーバーレイ自動適用、CSS変数対応" }
+    {
+      "id": "pain_a",
+      "name": "PAIN_A",
+      "file": "pain_a.html",
+      "description": ""
+    },
+    {
+      "id": "pain_b",
+      "name": "PAIN_B",
+      "file": "pain_b.html",
+      "description": ""
+    },
+    {
+      "id": "pain_c",
+      "name": "PAIN_C",
+      "file": "pain_c.html",
+      "description": ""
+    },
+    {
+      "id": "pain_d",
+      "name": "PAIN_D",
+      "file": "pain_d.html",
+      "description": ""
+    },
+    {
+      "id": "pain_e",
+      "name": "PAIN_E",
+      "file": "pain_e.html",
+      "description": ""
+    },
+    {
+      "id": "pain_f",
+      "name": "PAIN_F",
+      "file": "pain_f.html",
+      "description": ""
+    },
+    {
+      "id": "pain_g",
+      "name": "PAIN_G",
+      "file": "pain_g.html",
+      "description": ""
+    },
+    {
+      "id": "pain_h",
+      "name": "PAIN_H",
+      "file": "pain_h.html",
+      "description": ""
+    }
   ]
 }

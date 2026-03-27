@@ -2,12 +2,47 @@
   "section_type": "intro",
   "section_label": "イントロダクション",
   "variants": [
-    { "id": "intro_a", "name": "Intro_A", "file": "intro_a.html", "description": "セリフ体見出し+写真2枚+About説明文 — ブランド紹介型" },
-    { "id": "intro_b", "name": "Intro_B", "file": "intro_b.html", "description": "明朝体ポエム+写真コラージュ — クリニック・サロン向き" },
-    { "id": "intro_c", "name": "Intro_C", "file": "intro_c.html", "description": "写真左+テキスト右の2カラム — SP時写真1枚に切替・オンライン系サービス向き" },
-    { "id": "intro_d", "name": "Intro_D", "file": "intro_d.html", "description": "明朝体キャッチ+散らし写真型 — 左大写真+右テキスト+サブ写真2枚、上質感・クリニック向き" },
-    { "id": "intro_e", "name": "Intro_E", "file": "intro_e.html", "description": "ダーク帯+セリフ見出し+レタースペース広め本文 — ブランドコンセプト詩型（フルブリード背景・800px列・OopsWOMB系）" },
-    { "id": "intro_f", "name": "Intro_F", "file": "intro_f.html", "description": "サブタイトル+大見出し+本文2段+画像（動画置換可）— 中央1カラム・白背景（きかせてジャーニー系）" },
-    { "id": "intro_g", "name": "Intro_G", "file": "intro_g.html", "description": "背景フルブリード写真+暗オーバーレイ+左寄せ白文字（見出し・リード・本文）— コンセプト型（〆切手帳系）" }
+    {
+      "id": "intro_a",
+      "name": "INTRO_A",
+      "file": "intro_a.html",
+      "description": ""
+    },
+    {
+      "id": "intro_b",
+      "name": "INTRO_B",
+      "file": "intro_b.html",
+      "description": ""
+    },
+    {
+      "id": "intro_c",
+      "name": "INTRO_C",
+      "file": "intro_c.html",
+      "description": ""
+    },
+    {
+      "id": "intro_d",
+      "name": "INTRO_D",
+      "file": "intro_d.html",
+      "description": ""
+    },
+    {
+      "id": "intro_e",
+      "name": "INTRO_E",
+      "file": "intro_e.html",
+      "description": ""
+    },
+    {
+      "id": "intro_f",
+      "name": "INTRO_F",
+      "file": "intro_f.html",
+      "description": ""
+    },
+    {
+      "id": "intro_g",
+      "name": "INTRO_G",
+      "file": "intro_g.html",
+      "description": ""
+    }
   ]
 }

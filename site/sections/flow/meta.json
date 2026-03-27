@@ -2,7 +2,17 @@
   "section_type": "flow",
   "section_label": "ご利用の流れ",
   "variants": [
-    { "id": "flow_a", "name": "Flow_A", "file": "flow_a.html", "description": "3ステップ円形型 — PC横並び3円+三角矢印、SP縦並び+下向き矢印" },
-    { "id": "flow_b", "name": "Flow_B", "file": "flow_b.html", "description": "5ステップ縦リスト型 — 左:番号円アイコン+右:タイトル・説明、行間下向き矢印、下部吹き出しキャプション" }
+    {
+      "id": "flow_a",
+      "name": "FLOW_A",
+      "file": "flow_a.html",
+      "description": ""
+    },
+    {
+      "id": "flow_b",
+      "name": "FLOW_B",
+      "file": "flow_b.html",
+      "description": ""
+    }
   ]
 }

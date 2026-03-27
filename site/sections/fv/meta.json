@@ -2,8 +2,23 @@
   "section_type": "fv",
   "section_label": "FV（ファーストビュー）",
   "variants": [
-    { "id": "fv_a", "name": "FV_A", "file": "fv_a.html", "description": "フルスクリーン画像+中央テキスト" },
-    { "id": "fv_b", "name": "FV_B", "file": "fv_b.html", "description": "左テキスト+右画像の2カラム" },
-    { "id": "fv_c", "name": "FV_C", "file": "fv_c.html", "description": "テキスト中心・ミニマル型" }
+    {
+      "id": "fv_a",
+      "name": "FV_A",
+      "file": "fv_a.html",
+      "description": ""
+    },
+    {
+      "id": "fv_b",
+      "name": "FV_B",
+      "file": "fv_b.html",
+      "description": ""
+    },
+    {
+      "id": "fv_c",
+      "name": "FV_C",
+      "file": "fv_c.html",
+      "description": ""
+    }
   ]
 }
