@@ -13,7 +13,7 @@ body { background: #fff; font-family: sans-serif; color: #111; }
 /* ===== セクション ===== */
 .service-f {
   width: 100%;
-  padding: 48px 16px 64px;
+  padding: 48px 0 64px;
   background: #fff;
 }
 
@@ -30,6 +30,7 @@ body { background: #fff; font-family: sans-serif; color: #111; }
   color: #111;
   margin-bottom: 40px;
   letter-spacing: -0.01em;
+  padding: 0 20px;
 }
 
 /* ===== シーンリスト ===== */
@@ -40,13 +41,16 @@ body { background: #fff; font-family: sans-serif; color: #111; }
 }
 
 /* ===== 各シーン ===== */
+/* 左右に20pxずつ内側に寄せて画面幅100%を避ける */
 .scene-item {
   position: relative;
   width: 100%;
+  padding: 0 20px;
 }
 
 /* 画像プレースホルダー（16:7 比率） */
 .scene-img {
+  position: relative;
   width: 100%;
   aspect-ratio: 786 / 390;
   background: #ccc;
@@ -58,6 +62,7 @@ body { background: #fff; font-family: sans-serif; color: #111; }
 }
 
 /* ===== ラベルバッジ ===== */
+/* 左右端はphotoに flush、縦方向は12px内側 */
 .scene-label {
   position: absolute;
   background: #111;
@@ -69,17 +74,21 @@ body { background: #fff; font-family: sans-serif; color: #111; }
   white-space: pre-line;
 }
 
-.label-tl { top: 0; left: 0; }
-.label-br { bottom: 0; right: 0; }
+.label-tl { top: 12px; left: 0; }
+.label-br { bottom: 12px; right: 0; }
 
 /* ===== iPad (820px+) ===== */
 @media (min-width: 768px) {
   .service-f {
-    padding: 64px 24px 80px;
+    padding: 64px 0 80px;
   }
   .service-f .section-heading {
     font-size: 68px;
     margin-bottom: 48px;
+    padding: 0 24px;
+  }
+  .scene-item {
+    padding: 0 24px;
   }
   .scene-list {
     gap: 24px;
@@ -101,23 +110,27 @@ body { background: #fff; font-family: sans-serif; color: #111; }
     <div class="scene-list">
 
       <div class="scene-item">
-        <div class="scene-img">[photo]</div>
-        <span class="scene-label label-tl">テレワークの<br>おともに</span>
+        <div class="scene-img">
+          <span class="scene-label label-tl">テレワークの<br>おともに</span>
+        </div>
       </div>
 
       <div class="scene-item">
-        <div class="scene-img">[photo]</div>
-        <span class="scene-label label-br">外に出て<br>一服のかわりに</span>
+        <div class="scene-img">
+          <span class="scene-label label-br">外に出て<br>一服のかわりに</span>
+        </div>
       </div>
 
       <div class="scene-item">
-        <div class="scene-img">[photo]</div>
-        <span class="scene-label label-tl">オフの時間を<br>満喫するとき</span>
+        <div class="scene-img">
+          <span class="scene-label label-tl">オフの時間を<br>満喫するとき</span>
+        </div>
       </div>
 
       <div class="scene-item">
-        <div class="scene-img">[photo]</div>
-        <span class="scene-label label-br">集まって楽しむ<br>街でも自然でも</span>
+        <div class="scene-img">
+          <span class="scene-label label-br">集まって楽しむ<br>街でも自然でも</span>
+        </div>
       </div>
 
     </div>
