@@ -1,0 +1,128 @@
+<!-- description: 大見出し+シーン写真縦積み型 — h2大見出し＋4枚のシーン写真＋ラベルオーバーレイ（左上/右下交互）、SP・iPad同一1カラム -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service_F トレース — DR.VAPE 新習慣セクション</title>
+<style>
+/* ===== リセット ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #fff; font-family: sans-serif; color: #111; }
+
+/* ===== セクション ===== */
+.service-f {
+  width: 100%;
+  padding: 48px 16px 64px;
+  background: #fff;
+}
+
+.service-f .inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ===== 見出し ===== */
+.service-f .section-heading {
+  font-size: clamp(40px, 12vw, 68px);
+  font-weight: 900;
+  line-height: 1.2;
+  color: #111;
+  margin-bottom: 40px;
+  letter-spacing: -0.01em;
+}
+
+/* ===== シーンリスト ===== */
+.scene-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== 各シーン ===== */
+.scene-item {
+  position: relative;
+  width: 100%;
+}
+
+/* 画像プレースホルダー（16:7 比率） */
+.scene-img {
+  width: 100%;
+  aspect-ratio: 786 / 390;
+  background: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 13px;
+}
+
+/* ===== ラベルバッジ ===== */
+.scene-label {
+  position: absolute;
+  background: #111;
+  color: #fff;
+  font-size: clamp(12px, 3.5vw, 16px);
+  font-weight: 700;
+  line-height: 1.4;
+  padding: 6px 12px;
+  white-space: pre-line;
+}
+
+.label-tl { top: 0; left: 0; }
+.label-br { bottom: 0; right: 0; }
+
+/* ===== iPad (820px+) ===== */
+@media (min-width: 768px) {
+  .service-f {
+    padding: 64px 24px 80px;
+  }
+  .service-f .section-heading {
+    font-size: 68px;
+    margin-bottom: 48px;
+  }
+  .scene-list {
+    gap: 24px;
+  }
+  .scene-label {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+}
+</style>
+</head>
+<body>
+
+<section class="service-f">
+  <div class="inner">
+
+    <h2 class="section-heading">あなたも<br>香りを吸う<br>新習慣を</h2>
+
+    <div class="scene-list">
+
+      <div class="scene-item">
+        <div class="scene-img">[photo]</div>
+        <span class="scene-label label-tl">テレワークの<br>おともに</span>
+      </div>
+
+      <div class="scene-item">
+        <div class="scene-img">[photo]</div>
+        <span class="scene-label label-br">外に出て<br>一服のかわりに</span>
+      </div>
+
+      <div class="scene-item">
+        <div class="scene-img">[photo]</div>
+        <span class="scene-label label-tl">オフの時間を<br>満喫するとき</span>
+      </div>
+
+      <div class="scene-item">
+        <div class="scene-img">[photo]</div>
+        <span class="scene-label label-br">集まって楽しむ<br>街でも自然でも</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

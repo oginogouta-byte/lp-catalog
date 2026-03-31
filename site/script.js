@@ -95,7 +95,8 @@ const FALLBACK_META = {
     { "id": "service_b", "name": "SERVICE_B", "file": "service_b.html", "description": "" },
     { "id": "service_c", "name": "SERVICE_C", "file": "service_c.html", "description": "" },
     { "id": "service_d", "name": "SERVICE_D", "file": "service_d.html", "description": "" },
-    { "id": "service_e", "name": "SERVICE_E", "file": "service_e.html", "description": "" }
+    { "id": "service_e", "name": "SERVICE_E", "file": "service_e.html", "description": "" },
+    { "id": "service_f", "name": "SERVICE_F", "file": "service_f.html", "description": "大見出し+シーン写真縦積み型 — h2大見出し＋4枚のシーン写真＋ラベルオーバーレイ（左上/右下交互）、SP・iPad同一1カラム" }
   ]},
   "testimonial": { "section_type": "testimonial", "section_label": "実績・事例", "variants": [
     { "id": "testimonial_a", "name": "TESTIMONIAL_A", "file": "testimonial_a.html", "description": "" },

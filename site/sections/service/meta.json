@@ -31,6 +31,12 @@
       "name": "SERVICE_E",
       "file": "service_e.html",
       "description": ""
+    },
+    {
+      "id": "service_f",
+      "name": "SERVICE_F",
+      "file": "service_f.html",
+      "description": "大見出し+シーン写真縦積み型 — h2大見出し＋4枚のシーン写真＋ラベルオーバーレイ（左上/右下交互）、SP・iPad同一1カラム"
     }
   ]
 }
